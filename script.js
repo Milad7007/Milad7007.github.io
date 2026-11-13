@@ -1,236 +1,254 @@
-// ===================================
-// ENGINEER MILAD
-// RED DIMENSION EXPERIENCE
-// ===================================
+document.addEventListener("DOMContentLoaded", function () {
+
+    "use strict";
 
 
-// PAGE LOADER
+    // =====================================
+    // LOADING SCREEN
+    // =====================================
 
-window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
 
-    const loader = document.getElementById("pageLoader");
+    function hideLoader() {
 
-    setTimeout(() => {
-        loader.classList.add("hidden");
-    }, 700);
+        if (!loader) return;
 
-});
+        loader.classList.add("hide");
 
+        document.body.classList.add("loaded");
 
-// LANGUAGE SYSTEM
+        setTimeout(function () {
+            loader.style.display = "none";
+        }, 700);
 
-const langToggle = document.getElementById("langToggle");
+    }
 
-let currentLanguage = "en";
+    // حتی اگر انیمیشن مشکلی داشته باشد،
+    // صفحه بعد از مدت کوتاهی نمایش داده می‌شود.
 
+    setTimeout(hideLoader, 1800);
 
-function changeLanguage(language) {
-
-    currentLanguage = language;
-
-    document.documentElement.lang = language;
-
-    document.documentElement.dir =
-        language === "fa" ? "rtl" : "ltr";
-
-    document.body.classList.toggle(
-        "fa",
-        language === "fa"
-    );
-
-    const translatedElements =
-        document.querySelectorAll("[data-en][data-fa]");
-
-    translatedElements.forEach((element) => {
-
-        element.innerHTML =
-            element.getAttribute(`data-${language}`);
-
-    });
-
-    langToggle.textContent =
-        language === "en" ? "FA" : "EN";
-
-    document.title =
-        language === "fa"
-            ? "مهندس میلاد | پورتفولیوی دیجیتال"
-            : "ENGINEER MILAD | Digital Portfolio";
-
-    localStorage.setItem(
-        "preferredLanguage",
-        language
-    );
-
-}
+    window.addEventListener("load", hideLoader);
 
 
-// LANGUAGE BUTTON
+    // =====================================
+    // MOBILE MENU
+    // =====================================
 
-langToggle.addEventListener("click", () => {
+    const menuButton = document.getElementById("menuButton");
+    const navigation = document.getElementById("navigation");
 
-    const nextLanguage =
-        currentLanguage === "en" ? "fa" : "en";
+    if (menuButton && navigation) {
 
-    changeLanguage(nextLanguage);
+        menuButton.addEventListener("click", function () {
 
-});
+            navigation.classList.toggle("open");
 
+        });
 
-// MOBILE MENU
+        navigation.querySelectorAll("a").forEach(function (link) {
 
-const menuToggle =
-    document.getElementById("menuToggle");
+            link.addEventListener("click", function () {
 
-const navigation =
-    document.getElementById("navigation");
+                navigation.classList.remove("open");
 
+            });
 
-menuToggle.addEventListener("click", () => {
+        });
 
-    const isOpen =
-        navigation.classList.toggle("open");
+        document.addEventListener("click", function (event) {
 
-    menuToggle.setAttribute(
-        "aria-expanded",
-        isOpen
-    );
-
-});
-
-
-// CLOSE MENU AFTER CLICK
-
-document.querySelectorAll(".navigation a").forEach((link) => {
-
-    link.addEventListener("click", () => {
-
-        navigation.classList.remove("open");
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-    });
-
-});
-
-
-// SCROLL REVEAL ANIMATION
-
-const revealObserver = new IntersectionObserver(
-
-    (entries) => {
-
-        entries.forEach((entry) => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add("visible");
-
-                revealObserver.unobserve(entry.target);
-
+            if (
+                !navigation.contains(event.target) &&
+                !menuButton.contains(event.target)
+            ) {
+                navigation.classList.remove("open");
             }
 
         });
 
-    },
-
-    {
-        threshold: 0.12
     }
 
-);
+
+    // =====================================
+    // LANGUAGE SWITCH
+    // =====================================
+
+    const languageButton = document.getElementById("languageButton");
+
+    let currentLanguage = localStorage.getItem("em-language") || "en";
 
 
-document.querySelectorAll(".reveal").forEach((element) => {
+    function changeLanguage(language) {
 
-    revealObserver.observe(element);
+        currentLanguage = language;
 
-});
+        document.body.classList.toggle("fa", language === "fa");
 
+        document.documentElement.lang = language;
 
-// ACTIVE NAVIGATION
-
-const sections =
-    document.querySelectorAll("main section[id]");
-
-const navItems =
-    document.querySelectorAll(".navigation a");
+        document.documentElement.dir =
+            language === "fa" ? "rtl" : "ltr";
 
 
-const sectionObserver = new IntersectionObserver(
+        document.querySelectorAll("[data-en][data-fa]").forEach(function (element) {
 
-    (entries) => {
+            const translation = element.getAttribute("data-" + language);
 
-        entries.forEach((entry) => {
-
-            if (entry.isIntersecting) {
-
-                navItems.forEach((link) => {
-
-                    link.classList.remove("active");
-
-                    if (
-                        link.getAttribute("href") ===
-                        "#" + entry.target.id
-                    ) {
-
-                        link.classList.add("active");
-
-                    }
-
-                });
-
+            if (translation !== null) {
+                element.innerHTML = translation;
             }
 
         });
 
-    },
 
-    {
-        rootMargin: "-35% 0px -55% 0px"
-    }
+        if (languageButton) {
 
-);
+            languageButton.textContent =
+                language === "fa" ? "EN" : "FA";
 
-
-sections.forEach((section) => {
-
-    sectionObserver.observe(section);
-
-});
+        }
 
 
-// SAVE LANGUAGE AND RESTORE IT
-
-const savedLanguage =
-    localStorage.getItem("preferredLanguage");
-
-if (savedLanguage === "fa" || savedLanguage === "en") {
-
-    changeLanguage(savedLanguage);
-
-} else {
-
-    changeLanguage("en");
-
-}
+        document.title =
+            language === "fa"
+                ? "مهندس میلاد | پورتفولیوی دیجیتال"
+                : "ENGINEER MILAD | Digital Portfolio";
 
 
-// CLOSE MOBILE MENU WHEN RESIZING TO DESKTOP
-
-window.addEventListener("resize", () => {
-
-    if (window.innerWidth > 850) {
-
-        navigation.classList.remove("open");
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
+        localStorage.setItem("em-language", language);
 
     }
+
+
+    if (languageButton) {
+
+        languageButton.addEventListener("click", function () {
+
+            const newLanguage =
+                currentLanguage === "en" ? "fa" : "en";
+
+            changeLanguage(newLanguage);
+
+        });
+
+    }
+
+    changeLanguage(currentLanguage);
+
+
+    // =====================================
+    // SCROLL REVEAL
+    // =====================================
+
+    const revealElements = document.querySelectorAll(
+        ".section-heading, .about-art, .about-content, .skill-card, .service-item, .project-card, .timeline-item, .contact-box"
+    );
+
+
+    revealElements.forEach(function (element) {
+
+        element.classList.add("reveal");
+
+    });
+
+
+    if ("IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver(function (entries) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("visible");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        }, {
+            threshold: 0.12
+        });
+
+
+        revealElements.forEach(function (element) {
+
+            observer.observe(element);
+
+        });
+
+    } else {
+
+        revealElements.forEach(function (element) {
+
+            element.classList.add("visible");
+
+        });
+
+    }
+
+
+    // =====================================
+    // HEADER SCROLL EFFECT
+    // =====================================
+
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", function () {
+
+        if (!header) return;
+
+        if (window.scrollY > 50) {
+
+            header.style.background = "rgba(5,6,8,.96)";
+
+        } else {
+
+            header.style.background = "rgba(8,9,11,.78)";
+
+        }
+
+    });
+
+
+    // =====================================
+    // PROJECT CARD INTERACTION
+    // =====================================
+
+    document.querySelectorAll(".project-card").forEach(function (card) {
+
+        card.addEventListener("mouseenter", function () {
+
+            card.style.transition = "transform .3s ease";
+
+        });
+
+    });
+
+
+    // =====================================
+    // BACK TO TOP
+    // =====================================
+
+    const backTop = document.querySelector(".back-top");
+
+    if (backTop) {
+
+        backTop.addEventListener("click", function () {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        });
+
+    }
+
+
+    console.log("ENGINEER MILAD website initialized successfully.");
 
 });
