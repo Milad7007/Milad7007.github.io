@@ -1,89 +1,139 @@
 (() => {
   "use strict";
 
-  // گرفتن عناصر مورد نیاز از HTML
   const body = document.body;
+  const html = document.documentElement;
+
   const loader = document.getElementById("loader");
   const languageToggle = document.getElementById("languageToggle");
   const menuToggle = document.getElementById("menuToggle");
   const navigation = document.getElementById("navigation");
+  const header = document.getElementById("header");
+  const progress = document.getElementById("scrollProgress");
+  const backToTop = document.getElementById("backToTop");
 
-  // تمام متن‌هایی که ترجمه می‌شوند
-  const translated = document.querySelectorAll("[data-en][data-fa]");
+  const supportedLanguages = ["fa", "en", "ar", "de"];
+
+  const languageLabels = {
+    fa: "EN",
+    en: "AR",
+    ar: "DE",
+    de: "FA"
+  };
+
+  const languageNames = {
+    fa: "Persian",
+    en: "English",
+    ar: "Arabic",
+    de: "German"
+  };
 
   // بستن منوی موبایل
   function closeMenu() {
     navigation.classList.remove("open");
     menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open menu");
   }
 
-  // تغییر زبان سایت
+  // تغییر زبان
   function setLanguage(language) {
-    const lang = language === "en" ? "en" : "fa";
+    const lang = supportedLanguages.includes(language) ? language : "fa";
 
-    // تنظیم جهت و زبان صفحه
-    body.classList.toggle("fa", lang === "fa");
+    html.lang = lang;
+    html.dir = (lang === "fa" || lang === "ar") ? "rtl" : "ltr";
 
-    document.documentElement.lang = lang;
-    document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
+    body.classList.remove("fa", "en", "ar", "de");
+    body.classList.add(lang);
 
-    // تغییر متن‌ها
-    translated.forEach((item) => {
-      item.innerHTML = item.dataset[lang];
+    document.querySelectorAll("[data-fa][data-en][data-ar][data-de]").forEach((element) => {
+      const value = element.dataset[lang];
+
+      if (value !== undefined) {
+        element.innerHTML = value;
+      }
     });
 
-    // تغییر متن دکمه زبان
-    languageToggle.textContent =
-      lang === "fa" ? "EN" : "فارسی";
-
+    languageToggle.textContent = languageLabels[lang];
     languageToggle.setAttribute(
       "aria-label",
-      lang === "fa"
-        ? "Switch to English"
-        : "تغییر زبان به فارسی"
+      `Switch language. Current language: ${languageNames[lang]}`
     );
 
-    // تغییر عنوان تب مرورگر
-    document.title =
-      lang === "fa"
-        ? "میلاد حیدری | مهندس طراحی وب"
-        : "Milad Heidari | Web Designer";
+    const titles = {
+      fa: "میلاد حیدری | طراح وب",
+      en: "Milad Heidari | Web Designer",
+      ar: "ميلاد حيدري | مصمم ويب",
+      de: "Milad Heidari | Webdesigner"
+    };
 
-    // ذخیره زبان انتخاب‌شده
+    const descriptions = {
+      fa: "وب‌سایت شخصی میلاد حیدری؛ طراح وب و علاقه‌مند به ساخت تجربه‌های دیجیتال.",
+      en: "Milad Heidari — Web Designer & Front-end Developer.",
+      ar: "الموقع الشخصي لميلاد حيدري — مصمم ويب ومطور واجهات أمامية.",
+      de: "Persönliche Website von Milad Heidari — Webdesigner und Front-end-Entwickler."
+    };
+
+    document.title = titles[lang];
+
+    const descriptionTag = document.querySelector('meta[name="description"]');
+    if (descriptionTag) {
+      descriptionTag.setAttribute("content", descriptions[lang]);
+    }
+
     try {
-      localStorage.setItem("em-language", lang);
+      localStorage.setItem("mh-language", lang);
     } catch (error) {
-      // اگر localStorage در دسترس نبود، سایت همچنان کار می‌کند.
+      // سایت بدون ذخیره زبان هم به کار خود ادامه می‌دهد.
     }
 
     closeMenu();
   }
 
-  // کلیک روی دکمه تغییر زبان
+  // رفتن به زبان بعدی
   languageToggle.addEventListener("click", () => {
-    const currentLanguage = document.documentElement.lang;
+    const current = html.lang || "fa";
+    const currentIndex = supportedLanguages.indexOf(current);
+    const nextIndex = (currentIndex + 1) % supportedLanguages.length;
 
-    setLanguage(currentLanguage === "fa" ? "en" : "fa");
+    setLanguage(supportedLanguages[nextIndex]);
   });
 
-  // باز و بسته کردن منوی موبایل
+  // منوی موبایل
   menuToggle.addEventListener("click", () => {
-    const opened = navigation.classList.toggle("open");
+    const isOpen = navigation.classList.toggle("open");
 
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
     menuToggle.setAttribute(
-      "aria-expanded",
-      String(opened)
+      "aria-label",
+      isOpen ? "Close menu" : "Open menu"
     );
   });
 
-  // بستن منو بعد از انتخاب یکی از لینک‌ها
   navigation.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", closeMenu);
   });
 
-  // انیمیشن ظاهر شدن بخش‌ها هنگام اسکرول
-  if ("IntersectionObserver" in window) {
+  // بستن منو با کلیک بیرون از آن
+  document.addEventListener("click", (event) => {
+    const clickedInsideMenu = navigation.contains(event.target);
+    const clickedToggle = menuToggle.contains(event.target);
 
+    if (!clickedInsideMenu && !clickedToggle) {
+      closeMenu();
+    }
+  });
+
+  // بستن منو با کلید Escape
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+    }
+  });
+
+  // ظاهر شدن بخش‌ها هنگام اسکرول
+  const revealElements = document.querySelectorAll(".reveal");
+
+  if ("IntersectionObserver" in window) {
     const revealObserver = new IntersectionObserver(
       (entries, observer) => {
         entries.forEach((entry) => {
@@ -94,30 +144,34 @@
         });
       },
       {
-        threshold: 0.12
+        threshold: 0.12,
+        rootMargin: "0px 0px -35px 0px"
       }
     );
 
-    document.querySelectorAll(".reveal").forEach((item) => {
-      revealObserver.observe(item);
+    revealElements.forEach((element) => {
+      revealObserver.observe(element);
     });
+  } else {
+    revealElements.forEach((element) => {
+      element.classList.add("visible");
+    });
+  }
 
-    // مشخص کردن بخش فعال در منوی بالای سایت
+  // تشخیص بخش فعال در منو
+  const sections = document.querySelectorAll("main section[id]");
+  const navLinks = document.querySelectorAll(".navigation a");
+
+  if ("IntersectionObserver" in window) {
     const navObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (!entry.isIntersecting) return;
 
-            document.querySelectorAll(".navigation a").forEach((link) => {
-
-              link.classList.toggle(
-                "active",
-                link.getAttribute("href") === "#" + entry.target.id
-              );
-
-            });
-
-          }
+          navLinks.forEach((link) => {
+            const isActive = link.getAttribute("href") === `#${entry.target.id}`;
+            link.classList.toggle("active", isActive);
+          });
         });
       },
       {
@@ -125,62 +179,82 @@
       }
     );
 
-    document.querySelectorAll("main section[id]").forEach((section) => {
+    sections.forEach((section) => {
       navObserver.observe(section);
     });
-
-  } else {
-
-    // برای مرورگرهای قدیمی
-    document.querySelectorAll(".reveal").forEach((item) => {
-      item.classList.add("visible");
-    });
-
   }
 
-  // نمایش سال فعلی در فوتر
+  // افکت‌های وابسته به اسکرول
+  let ticking = false;
+
+  function updateScrollEffects() {
+    const scrollTop = window.scrollY;
+    const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const percentage = pageHeight > 0 ? (scrollTop / pageHeight) * 100 : 0;
+
+    progress.style.width = `${percentage}%`;
+
+    header.classList.toggle("scrolled", scrollTop > 30);
+    backToTop.classList.toggle("show", scrollTop > 500);
+
+    ticking = false;
+  }
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateScrollEffects);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateScrollEffects();
+
+  // دکمه بازگشت به بالا
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+  // سال جاری
   const yearElement = document.getElementById("year");
 
   if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
   }
 
-  // زبان پیش‌فرض فارسی است
+  // بارگذاری زبان ذخیره‌شده
   let savedLanguage = "fa";
 
   try {
-    savedLanguage = localStorage.getItem("em-language") || "fa";
+    const storedLanguage = localStorage.getItem("mh-language");
+
+    if (supportedLanguages.includes(storedLanguage)) {
+      savedLanguage = storedLanguage;
+    }
   } catch (error) {
     savedLanguage = "fa";
   }
 
-  // اعمال زبان ذخیره‌شده
   setLanguage(savedLanguage);
 
-  // مخفی کردن صفحه لودینگ
-  const hideLoader = () => {
+  // مخفی کردن لودر
+  function hideLoader() {
     if (loader) {
       loader.classList.add("is-hidden");
     }
-  };
-
-  if (document.readyState === "complete") {
-
-    window.setTimeout(hideLoader, 400);
-
-  } else {
-
-    window.addEventListener(
-      "load",
-      () => {
-        window.setTimeout(hideLoader, 400);
-      },
-      { once: true }
-    );
-
   }
 
-  // جلوگیری از باقی ماندن لودینگ در صورت مشکل بارگذاری
+  if (document.readyState === "complete") {
+    window.setTimeout(hideLoader, 450);
+  } else {
+    window.addEventListener("load", () => {
+      window.setTimeout(hideLoader, 450);
+    }, { once: true });
+  }
+
+  // جلوگیری از باقی ماندن لودر
   window.setTimeout(hideLoader, 3500);
 
 })();
