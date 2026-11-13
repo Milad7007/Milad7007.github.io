@@ -1,260 +1,602 @@
-(() => {
-  "use strict";
+/* =========================================
+   MILAD HEIDARI — INTERACTIVE EXPERIENCE
+========================================= */
 
-  const body = document.body;
-  const html = document.documentElement;
 
-  const loader = document.getElementById("loader");
-  const languageToggle = document.getElementById("languageToggle");
-  const menuToggle = document.getElementById("menuToggle");
-  const navigation = document.getElementById("navigation");
-  const header = document.getElementById("header");
-  const progress = document.getElementById("scrollProgress");
-  const backToTop = document.getElementById("backToTop");
+/* PRELOADER */
 
-  const supportedLanguages = ["fa", "en", "ar", "de"];
+window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
 
-  const languageLabels = {
-    fa: "EN",
-    en: "AR",
-    ar: "DE",
-    de: "FA"
-  };
+    setTimeout(() => {
+        preloader.classList.add("hidden");
+    }, 900);
+});
 
-  const languageNames = {
-    fa: "Persian",
+
+/* CURRENT YEAR */
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+
+/* LANGUAGE SYSTEM */
+
+const languageButton = document.getElementById("languageButton");
+const languageWrapper = document.querySelector(".language-wrapper");
+const languageLabel = document.getElementById("languageLabel");
+const languageOptions = document.querySelectorAll(".language-menu button");
+
+const languageNames = {
+    fa: "فارسی",
     en: "English",
-    ar: "Arabic",
-    de: "German"
-  };
+    ar: "عربي",
+    de: "Deutsch"
+};
 
-  // بستن منوی موبایل
-  function closeMenu() {
-    navigation.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Open menu");
-  }
 
-  // تغییر زبان
-  function setLanguage(language) {
-    const lang = supportedLanguages.includes(language) ? language : "fa";
+function changeLanguage(language) {
 
-    html.lang = lang;
-    html.dir = (lang === "fa" || lang === "ar") ? "rtl" : "ltr";
+    if (!languageNames[language]) return;
 
-    body.classList.remove("fa", "en", "ar", "de");
-    body.classList.add(lang);
+    const direction = ["fa", "ar"].includes(language) ? "rtl" : "ltr";
 
-    document.querySelectorAll("[data-fa][data-en][data-ar][data-de]").forEach((element) => {
-      const value = element.dataset[lang];
+    document.documentElement.lang = language;
+    document.documentElement.dir = direction;
 
-      if (value !== undefined) {
-        element.innerHTML = value;
-      }
+    document.body.dataset.lang = language;
+    document.body.dir = direction;
+
+    languageLabel.textContent = languageNames[language];
+
+    const translatedElements = document.querySelectorAll("[data-fa]");
+
+    translatedElements.forEach(element => {
+
+        const translation = element.getAttribute(`data-${language}`);
+
+        if (translation !== null) {
+            element.innerHTML = translation;
+        }
+
     });
 
-    languageToggle.textContent = languageLabels[lang];
-    languageToggle.setAttribute(
-      "aria-label",
-      `Switch language. Current language: ${languageNames[lang]}`
-    );
+    languageOptions.forEach(option => {
 
-    const titles = {
-      fa: "میلاد حیدری | طراح وب",
-      en: "Milad Heidari | Web Designer",
-      ar: "ميلاد حيدري | مصمم ويب",
-      de: "Milad Heidari | Webdesigner"
-    };
+        option.classList.toggle(
+            "selected",
+            option.dataset.lang === language
+        );
 
-    const descriptions = {
-      fa: "وب‌سایت شخصی میلاد حیدری؛ طراح وب و علاقه‌مند به ساخت تجربه‌های دیجیتال.",
-      en: "Milad Heidari — Web Designer & Front-end Developer.",
-      ar: "الموقع الشخصي لميلاد حيدري — مصمم ويب ومطور واجهات أمامية.",
-      de: "Persönliche Website von Milad Heidari — Webdesigner und Front-end-Entwickler."
-    };
-
-    document.title = titles[lang];
-
-    const descriptionTag = document.querySelector('meta[name="description"]');
-    if (descriptionTag) {
-      descriptionTag.setAttribute("content", descriptions[lang]);
-    }
-
-    try {
-      localStorage.setItem("mh-language", lang);
-    } catch (error) {
-      // سایت بدون ذخیره زبان هم به کار خود ادامه می‌دهد.
-    }
-
-    closeMenu();
-  }
-
-  // رفتن به زبان بعدی
-  languageToggle.addEventListener("click", () => {
-    const current = html.lang || "fa";
-    const currentIndex = supportedLanguages.indexOf(current);
-    const nextIndex = (currentIndex + 1) % supportedLanguages.length;
-
-    setLanguage(supportedLanguages[nextIndex]);
-  });
-
-  // منوی موبایل
-  menuToggle.addEventListener("click", () => {
-    const isOpen = navigation.classList.toggle("open");
-
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-    menuToggle.setAttribute(
-      "aria-label",
-      isOpen ? "Close menu" : "Open menu"
-    );
-  });
-
-  navigation.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
-
-  // بستن منو با کلیک بیرون از آن
-  document.addEventListener("click", (event) => {
-    const clickedInsideMenu = navigation.contains(event.target);
-    const clickedToggle = menuToggle.contains(event.target);
-
-    if (!clickedInsideMenu && !clickedToggle) {
-      closeMenu();
-    }
-  });
-
-  // بستن منو با کلید Escape
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeMenu();
-    }
-  });
-
-  // ظاهر شدن بخش‌ها هنگام اسکرول
-  const revealElements = document.querySelectorAll(".reveal");
-
-  if ("IntersectionObserver" in window) {
-    const revealObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.12,
-        rootMargin: "0px 0px -35px 0px"
-      }
-    );
-
-    revealElements.forEach((element) => {
-      revealObserver.observe(element);
     });
-  } else {
-    revealElements.forEach((element) => {
-      element.classList.add("visible");
+
+    localStorage.setItem("milad-language", language);
+
+    languageWrapper.classList.remove("open");
+
+    document.title = language === "fa"
+        ? "میلاد حیدری | طراح تجربه‌های دیجیتال"
+        : "Milad Heidari | Digital Experience Designer";
+}
+
+
+/* OPEN LANGUAGE MENU */
+
+languageButton.addEventListener("click", (event) => {
+
+    event.stopPropagation();
+
+    languageWrapper.classList.toggle("open");
+
+});
+
+
+/* LANGUAGE OPTIONS */
+
+languageOptions.forEach(option => {
+
+    option.addEventListener("click", () => {
+
+        changeLanguage(option.dataset.lang);
+
     });
-  }
 
-  // تشخیص بخش فعال در منو
-  const sections = document.querySelectorAll("main section[id]");
-  const navLinks = document.querySelectorAll(".navigation a");
+});
 
-  if ("IntersectionObserver" in window) {
-    const navObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
 
-          navLinks.forEach((link) => {
-            const isActive = link.getAttribute("href") === `#${entry.target.id}`;
-            link.classList.toggle("active", isActive);
-          });
-        });
-      },
-      {
-        rootMargin: "-35% 0px -55% 0px"
-      }
-    );
+/* CLOSE LANGUAGE MENU */
 
-    sections.forEach((section) => {
-      navObserver.observe(section);
+document.addEventListener("click", event => {
+
+    if (!languageWrapper.contains(event.target)) {
+        languageWrapper.classList.remove("open");
+    }
+
+});
+
+
+/* LOAD SAVED LANGUAGE */
+
+const savedLanguage = localStorage.getItem("milad-language") || "fa";
+
+changeLanguage(savedLanguage);
+
+
+/* MOBILE NAVIGATION */
+
+const menuToggle = document.getElementById("menuToggle");
+const navigation = document.getElementById("navigation");
+const navLinks = document.querySelectorAll(".nav-link");
+
+
+menuToggle.addEventListener("click", () => {
+
+    navigation.classList.toggle("open");
+
+    menuToggle.classList.toggle("active");
+
+});
+
+
+/* CLOSE MOBILE MENU AFTER CLICK */
+
+navLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navigation.classList.remove("open");
+        menuToggle.classList.remove("active");
+
     });
-  }
 
-  // افکت‌های وابسته به اسکرول
-  let ticking = false;
+});
 
-  function updateScrollEffects() {
+
+/* CLOSE MOBILE MENU OUTSIDE */
+
+document.addEventListener("click", event => {
+
+    const clickedInsideNavigation = navigation.contains(event.target);
+    const clickedMenuButton = menuToggle.contains(event.target);
+
+    if (!clickedInsideNavigation && !clickedMenuButton) {
+
+        navigation.classList.remove("open");
+        menuToggle.classList.remove("active");
+
+    }
+
+});
+
+
+/* HEADER SCROLL EFFECT */
+
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+
+    header.classList.toggle("scrolled", window.scrollY > 50);
+
+});
+
+
+/* SCROLL PROGRESS */
+
+const scrollProgress = document.getElementById("scrollProgress");
+
+function updateScrollProgress() {
+
     const scrollTop = window.scrollY;
-    const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const percentage = pageHeight > 0 ? (scrollTop / pageHeight) * 100 : 0;
 
-    progress.style.width = `${percentage}%`;
+    const documentHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
 
-    header.classList.toggle("scrolled", scrollTop > 30);
-    backToTop.classList.toggle("show", scrollTop > 500);
+    const progress = documentHeight > 0
+        ? (scrollTop / documentHeight) * 100
+        : 0;
 
-    ticking = false;
-  }
+    scrollProgress.style.width = `${progress}%`;
 
-  window.addEventListener("scroll", () => {
-    if (!ticking) {
-      window.requestAnimationFrame(updateScrollEffects);
-      ticking = true;
+}
+
+window.addEventListener("scroll", updateScrollProgress);
+
+
+/* REVEAL ANIMATIONS */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver(
+
+    (entries, observer) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px"
     }
-  }, { passive: true });
 
-  updateScrollEffects();
+);
 
-  // دکمه بازگشت به بالا
-  backToTop.addEventListener("click", () => {
+
+revealElements.forEach(element => {
+
+    revealObserver.observe(element);
+
+});
+
+
+/* SKILL ANIMATIONS */
+
+const skillItems = document.querySelectorAll(".skill-item");
+
+const skillObserver = new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+                skillObserver.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold: 0.4
+    }
+
+);
+
+
+skillItems.forEach(skill => {
+
+    skillObserver.observe(skill);
+
+});
+
+
+/* ACTIVE NAVIGATION */
+
+const sections = document.querySelectorAll("main section[id]");
+
+const activeObserver = new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                const currentId = entry.target.id;
+
+                navLinks.forEach(link => {
+
+                    const isActive =
+                        link.getAttribute("href") === `#${currentId}`;
+
+                    link.classList.toggle("active", isActive);
+
+                });
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold: 0.3
+    }
+
+);
+
+
+sections.forEach(section => {
+
+    activeObserver.observe(section);
+
+});
+
+
+/* BACK TO TOP */
+
+const backTop = document.getElementById("backTop");
+
+backTop.addEventListener("click", event => {
+
+    event.preventDefault();
+
     window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+        top: 0,
+        behavior: "smooth"
     });
-  });
 
-  // سال جاری
-  const yearElement = document.getElementById("year");
+});
 
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-  }
 
-  // بارگذاری زبان ذخیره‌شده
-  let savedLanguage = "fa";
+/* PARTICLE BACKGROUND */
 
-  try {
-    const storedLanguage = localStorage.getItem("mh-language");
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
 
-    if (supportedLanguages.includes(storedLanguage)) {
-      savedLanguage = storedLanguage;
+let particles = [];
+
+let canvasWidth = 0;
+let canvasHeight = 0;
+
+const particleCount = window.innerWidth < 600 ? 35 : 75;
+
+
+function resizeCanvas() {
+
+    const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+
+    canvasWidth = window.innerWidth;
+    canvasHeight = window.innerHeight;
+
+    canvas.width = canvasWidth * pixelRatio;
+    canvas.height = canvasHeight * pixelRatio;
+
+    canvas.style.width = `${canvasWidth}px`;
+    canvas.style.height = `${canvasHeight}px`;
+
+    ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+
+}
+
+
+function createParticles() {
+
+    particles = [];
+
+    for (let i = 0; i < particleCount; i++) {
+
+        particles.push({
+
+            x: Math.random() * canvasWidth,
+            y: Math.random() * canvasHeight,
+
+            size: Math.random() * 1.5 + 0.3,
+
+            speedX: (Math.random() - 0.5) * 0.25,
+            speedY: (Math.random() - 0.5) * 0.25,
+
+            opacity: Math.random() * 0.45 + 0.1,
+
+            phase: Math.random() * Math.PI * 2
+
+        });
+
     }
-  } catch (error) {
-    savedLanguage = "fa";
-  }
 
-  setLanguage(savedLanguage);
+}
 
-  // مخفی کردن لودر
-  function hideLoader() {
-    if (loader) {
-      loader.classList.add("is-hidden");
+
+function drawParticles() {
+
+    ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+    particles.forEach(particle => {
+
+        particle.x += particle.speedX;
+        particle.y += particle.speedY;
+
+        particle.phase += 0.012;
+
+        const opacity =
+            particle.opacity * (0.65 + Math.sin(particle.phase) * 0.35);
+
+        if (particle.x < 0) particle.x = canvasWidth;
+        if (particle.x > canvasWidth) particle.x = 0;
+
+        if (particle.y < 0) particle.y = canvasHeight;
+        if (particle.y > canvasHeight) particle.y = 0;
+
+        ctx.beginPath();
+
+        ctx.arc(
+            particle.x,
+            particle.y,
+            particle.size,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fillStyle = `rgba(205, 35, 72, ${opacity})`;
+
+        ctx.fill();
+
+    });
+
+
+    /* CONNECTIONS */
+
+    for (let i = 0; i < particles.length; i++) {
+
+        for (let j = i + 1; j < particles.length; j++) {
+
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 115) {
+
+                const opacity = (1 - distance / 115) * 0.1;
+
+                ctx.beginPath();
+
+                ctx.moveTo(particles[i].x, particles[i].y);
+
+                ctx.lineTo(particles[j].x, particles[j].y);
+
+                ctx.strokeStyle = `rgba(180, 25, 60, ${opacity})`;
+
+                ctx.lineWidth = 0.6;
+
+                ctx.stroke();
+
+            }
+
+        }
+
     }
-  }
 
-  if (document.readyState === "complete") {
-    window.setTimeout(hideLoader, 450);
-  } else {
-    window.addEventListener("load", () => {
-      window.setTimeout(hideLoader, 450);
-    }, { once: true });
-  }
+}
 
-  // جلوگیری از باقی ماندن لودر
-  window.setTimeout(hideLoader, 3500);
 
-})();
+let animationFrame;
+
+function animateParticles() {
+
+    drawParticles();
+
+    animationFrame = requestAnimationFrame(animateParticles);
+
+}
+
+
+resizeCanvas();
+
+createParticles();
+
+animateParticles();
+
+
+window.addEventListener("resize", () => {
+
+    resizeCanvas();
+
+    createParticles();
+
+});
+
+
+/* PAUSE PARTICLES WHEN TAB IS HIDDEN */
+
+document.addEventListener("visibilitychange", () => {
+
+    if (document.hidden) {
+
+        cancelAnimationFrame(animationFrame);
+
+    } else {
+
+        animateParticles();
+
+    }
+
+});
+
+
+/* MOUSE PARALLAX */
+
+const heroVisual = document.querySelector(".hero-visual");
+
+const visualRings = document.querySelectorAll(".visual-ring");
+
+const canUsePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+if (canUsePointer) {
+
+    heroVisual.addEventListener("mousemove", event => {
+
+        const rect = heroVisual.getBoundingClientRect();
+
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+        visualRings.forEach((ring, index) => {
+
+            const strength = (index + 1) * 8;
+
+            ring.style.translate = `${x * strength}px ${y * strength}px`;
+
+        });
+
+    });
+
+
+    heroVisual.addEventListener("mouseleave", () => {
+
+        visualRings.forEach(ring => {
+
+            ring.style.translate = "0 0";
+
+        });
+
+    });
+
+}
+
+
+/* SMOOTH ANCHOR NAVIGATION */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", event => {
+
+        const targetId = anchor.getAttribute("href");
+
+        if (!targetId || targetId === "#") return;
+
+        const target = document.querySelector(targetId);
+
+        if (!target) return;
+
+        event.preventDefault();
+
+        target.scrollIntoView({
+
+            behavior: "smooth",
+            block: "start"
+
+        });
+
+    });
+
+});
+
+
+/* PROJECT CARD POINTER LIGHT */
+
+document.querySelectorAll(".project-card").forEach(card => {
+
+    card.addEventListener("mousemove", event => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
+
+    });
+
+});
+
+
+/* PAGE READY */
+
+document.documentElement.classList.add("js-ready");
