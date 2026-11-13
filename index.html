@@ -1,574 +1,694 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>ENGINEER MILAD | Digital Portfolio</title>
 
-    <meta name="description" content="ENGINEER MILAD - Dreaming in code, building the future.">
+    <meta name="description" content="ENGINEER MILAD - Personal portfolio, technology, creativity and development.">
+
+    <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="page-loader" id="pageLoader">
-        <div class="loader-logo">EM<span>.</span></div>
-        <div class="loader-line"></div>
+<!-- LOADING SCREEN -->
+<div class="loader-screen" id="loader">
+
+    <div class="loader-content">
+
+        <div class="loader-logo">
+            EM<span>.</span>
+        </div>
+
+        <div class="loader-line">
+            <div class="loader-progress"></div>
+        </div>
+
         <p>INITIALIZING EXPERIENCE</p>
+
     </div>
 
-    <div class="background-grid"></div>
-    <div class="background-glow glow-one"></div>
-    <div class="background-glow glow-two"></div>
+</div>
 
-    <div class="noise"></div>
 
-    <!-- NAVIGATION -->
+<!-- BACKGROUND -->
+<div class="background-grid"></div>
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
 
-    <header class="header">
 
-        <a href="#home" class="logo">
-            <span class="logo-symbol">E<span>M</span></span>
-            <span class="logo-text">ENGINEER <b>MILAD</b></span>
-        </a>
+<!-- NAVBAR -->
+<header class="header" id="header">
 
-        <nav class="navigation" id="navigation">
+    <a href="#home" class="logo">
+        ENGINEER <span>MILAD.</span>
+    </a>
 
-            <a href="#home" data-en="HOME" data-fa="خانه">HOME</a>
-            <a href="#about" data-en="ABOUT" data-fa="درباره من">ABOUT</a>
-            <a href="#skills" data-en="SKILLS" data-fa="مهارت‌ها">SKILLS</a>
-            <a href="#projects" data-en="PROJECTS" data-fa="پروژه‌ها">PROJECTS</a>
-            <a href="#journey" data-en="JOURNEY" data-fa="مسیر من">JOURNEY</a>
-            <a href="#services" data-en="SERVICES" data-fa="خدمات">SERVICES</a>
-            <a href="#contact" data-en="CONTACT" data-fa="ارتباط">CONTACT</a>
+    <nav class="navigation" id="navigation">
 
-        </nav>
+        <a href="#home" data-en="Home" data-fa="خانه">Home</a>
 
-        <div class="header-actions">
+        <a href="#about" data-en="About" data-fa="درباره من">About</a>
 
-            <button class="language-button" id="langToggle">
-                FA
-            </button>
+        <a href="#skills" data-en="Skills" data-fa="مهارت‌ها">Skills</a>
 
-            <button class="menu-button" id="menuToggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-            </button>
+        <a href="#services" data-en="Services" data-fa="خدمات">Services</a>
+
+        <a href="#projects" data-en="Projects" data-fa="پروژه‌ها">Projects</a>
+
+        <a href="#journey" data-en="Journey" data-fa="مسیر من">Journey</a>
+
+        <a href="#contact" data-en="Contact" data-fa="ارتباط">Contact</a>
+
+    </nav>
+
+    <div class="nav-actions">
+
+        <button class="language-button" id="languageButton">FA</button>
+
+        <button class="menu-button" id="menuButton" aria-label="Open menu">
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+
+</header>
+
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="hero section" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            <span class="status-dot"></span>
+            <span data-en="AVAILABLE FOR NEW IDEAS" data-fa="آماده برای ایده‌های جدید">AVAILABLE FOR NEW IDEAS</span>
+        </div>
+
+        <p class="hero-intro" data-en="WELCOME TO MY DIGITAL WORLD" data-fa="به دنیای دیجیتال من خوش آمدید">
+            WELCOME TO MY DIGITAL WORLD
+        </p>
+
+        <h1>
+            <span data-en="ENGINEER" data-fa="مهندس">ENGINEER</span>
+            <span class="hero-name" data-en="MILAD." data-fa="میلاد.">MILAD.</span>
+        </h1>
+
+        <div class="hero-description">
+
+            <p data-en="I turn creative ideas into digital experiences." data-fa="ایده‌های خلاقانه را به تجربه‌های دیجیتال تبدیل می‌کنم.">
+                I turn creative ideas into digital experiences.
+            </p>
+
+            <p class="muted-text" data-en="Technology · Creativity · Future" data-fa="تکنولوژی · خلاقیت · آینده">
+                Technology · Creativity · Future
+            </p>
 
         </div>
 
-    </header>
+        <div class="hero-buttons">
+
+            <a href="#projects" class="button button-primary">
+                <span data-en="EXPLORE MY WORK" data-fa="مشاهده پروژه‌ها">EXPLORE MY WORK</span>
+                <span>↗</span>
+            </a>
+
+            <a href="#about" class="button button-outline">
+                <span data-en="DISCOVER MORE" data-fa="بیشتر بدانید">DISCOVER MORE</span>
+            </a>
+
+        </div>
+
+        <div class="hero-footer">
+
+            <span>01 / 07</span>
+
+            <span data-en="SCROLL TO EXPLORE" data-fa="برای مشاهده اسکرول کنید">
+                SCROLL TO EXPLORE
+            </span>
+
+        </div>
+
+    </div>
 
 
-    <main>
+    <div class="hero-visual">
 
-        <!-- HERO -->
+        <div class="visual-circle circle-one"></div>
+        <div class="visual-circle circle-two"></div>
+        <div class="visual-circle circle-three"></div>
 
-        <section class="hero" id="home">
+        <div class="visual-orb">
 
-            <div class="hero-left reveal">
+            <div class="orb-highlight"></div>
 
-                <div class="availability">
-                    <span class="status-dot"></span>
-                    <span data-en="AVAILABLE FOR NEW IDEAS"
-                          data-fa="آماده برای ایده‌های جدید">
-                        AVAILABLE FOR NEW IDEAS
-                    </span>
+            <span>EM</span>
+
+            <div class="orb-line"></div>
+
+        </div>
+
+        <div class="floating-card card-top">
+
+            <span class="card-icon">✦</span>
+
+            <div>
+                <small data-en="CREATIVE MIND" data-fa="ذهن خلاق">CREATIVE MIND</small>
+                <strong>01 / 2026</strong>
+            </div>
+
+        </div>
+
+        <div class="floating-card card-bottom">
+
+            <span class="card-icon red-icon">⌘</span>
+
+            <div>
+                <small data-en="DIGITAL FUTURE" data-fa="آینده دیجیتال">DIGITAL FUTURE</small>
+                <strong>BUILD / CREATE</strong>
+            </div>
+
+        </div>
+
+        <div class="visual-number">01</div>
+
+    </div>
+
+</section>
+
+
+<!-- MARQUEE -->
+<div class="marquee">
+
+    <div class="marquee-track">
+
+        <span>DESIGN</span>
+        <i>✦</i>
+        <span>DEVELOPMENT</span>
+        <i>✦</i>
+        <span>TECHNOLOGY</span>
+        <i>✦</i>
+        <span>CREATIVITY</span>
+        <i>✦</i>
+        <span>FUTURE</span>
+        <i>✦</i>
+
+        <span>DESIGN</span>
+        <i>✦</i>
+        <span>DEVELOPMENT</span>
+        <i>✦</i>
+        <span>TECHNOLOGY</span>
+        <i>✦</i>
+        <span>CREATIVITY</span>
+        <i>✦</i>
+        <span>FUTURE</span>
+        <i>✦</i>
+
+    </div>
+
+</div>
+
+
+<!-- ABOUT -->
+<section class="section about-section" id="about">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="section-number">01 — ABOUT</span>
+            <h2 data-en="Beyond the <span>ordinary.</span>" data-fa="فراتر از <span>معمولی.</span>">
+                Beyond the <span>ordinary.</span>
+            </h2>
+        </div>
+
+        <p data-en="A little introduction about who I am and what drives me." data-fa="معرفی کوتاهی از من و چیزهایی که به من انگیزه می‌دهند.">
+            A little introduction about who I am and what drives me.
+        </p>
+
+    </div>
+
+
+    <div class="about-grid">
+
+        <div class="about-art">
+
+            <div class="art-frame">
+
+                <div class="art-cross">+</div>
+
+                <div class="art-big-text">EM.</div>
+
+                <div class="art-bottom">
+                    <span>ENGINEER MILAD</span>
+                    <span>EST. 2026</span>
                 </div>
 
-                <p class="hero-overline">
+            </div>
+
+            <div class="art-side-label">INNOVATION / 001</div>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <span class="red-label" data-en="THE PERSON BEHIND THE SCREEN" data-fa="فرد پشت دنیای دیجیتال">
+                THE PERSON BEHIND THE SCREEN
+            </span>
+
+            <h3 data-en="Curiosity is where everything begins." data-fa="همه چیز از کنجکاوی شروع می‌شود.">
+                Curiosity is where everything begins.
+            </h3>
+
+            <p data-en="I am Milad, a technology enthusiast interested in programming, digital creativity and building meaningful experiences. I believe every great project begins with a simple idea and grows through curiosity, learning and persistence."
+               data-fa="من میلاد هستم؛ علاقه‌مند به تکنولوژی، برنامه‌نویسی، خلاقیت دیجیتال و ساخت تجربه‌های متفاوت. باور دارم هر پروژه بزرگ با یک ایده ساده شروع می‌شود و با کنجکاوی، یادگیری و تلاش رشد می‌کند.">
+
+                I am Milad, a technology enthusiast interested in programming, digital creativity and building meaningful experiences. I believe every great project begins with a simple idea and grows through curiosity, learning and persistence.
+
+            </p>
+
+            <div class="about-details">
+
+                <div>
                     <span>01</span>
-                    / DIGITAL IDENTITY
-                </p>
-
-                <h1>
-                    <span data-en="ENGINEER" data-fa="مهندس">ENGINEER</span>
-                    <span class="hero-name">MILAD<span class="red-dot">.</span></span>
-                </h1>
-
-                <h2 data-en="CREATING THE FUTURE<br>ONE LINE AT A TIME."
-                    data-fa="ساختن آینده،<br>خط به خط.">
-                    CREATING THE FUTURE<br>ONE LINE AT A TIME.
-                </h2>
-
-                <p class="hero-description"
-                   data-en="I transform ideas into digital experiences through creativity, technology and code."
-                   data-fa="من ایده‌ها را با خلاقیت، فناوری و برنامه‌نویسی به تجربه‌های دیجیتال تبدیل می‌کنم.">
-                    I transform ideas into digital experiences through creativity, technology and code.
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="#projects" class="button-primary">
-                        <span data-en="EXPLORE PROJECTS" data-fa="مشاهده پروژه‌ها">EXPLORE PROJECTS</span>
-                        <span>↗</span>
-                    </a>
-
-                    <a href="#about" class="button-secondary"
-                       data-en="DISCOVER MORE"
-                       data-fa="بیشتر بدانید">
-                        DISCOVER MORE
-                    </a>
-
+                    <strong data-en="Creative Thinking" data-fa="تفکر خلاق">Creative Thinking</strong>
                 </div>
-
-                <div class="hero-social">
-
-                    <span data-en="FOLLOW THE JOURNEY" data-fa="دنبال کردن مسیر">
-                        FOLLOW THE JOURNEY
-                    </span>
-
-                    <div class="social-line"></div>
-
-                    <span>01 — 2026</span>
-
-                </div>
-
-            </div>
-
-
-            <div class="hero-right reveal">
-
-                <div class="visual-top">
-                    <span>CREATIVE LAB / 001</span>
-                    <span class="live-indicator">● LIVE</span>
-                </div>
-
-                <div class="orbital-scene">
-
-                    <div class="orbit orbit-one"></div>
-                    <div class="orbit orbit-two"></div>
-                    <div class="orbit orbit-three"></div>
-
-                    <div class="planet planet-main">
-                        <div class="planet-highlight"></div>
-                    </div>
-
-                    <div class="planet-small"></div>
-                    <div class="planet-red"></div>
-
-                    <div class="orbit-label orbit-label-one">CREATIVITY</div>
-                    <div class="orbit-label orbit-label-two">TECHNOLOGY</div>
-
-                    <div class="crosshair crosshair-one">+</div>
-                    <div class="crosshair crosshair-two">+</div>
-
-                </div>
-
-                <div class="visual-bottom">
-                    <div>
-                        <span>DESIGN PHILOSOPHY</span>
-                        <strong>LESS NOISE. MORE IMPACT.</strong>
-                    </div>
-
-                    <div class="visual-code">
-                        51° 30' 26.4"N
-                    </div>
-                </div>
-
-                <div class="floating-card floating-card-one">
-                    <span class="floating-icon">✳</span>
-                    <div>
-                        <small>FOCUS</small>
-                        <strong>INNOVATION</strong>
-                    </div>
-                </div>
-
-                <div class="floating-card floating-card-two">
-                    <span class="floating-icon red-icon">⌘</span>
-                    <div>
-                        <small>MODE</small>
-                        <strong>CREATIVE</strong>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="hero-bottom-line">
-                <span>SCROLL TO EXPLORE</span>
-                <div class="scroll-line"></div>
-                <span>ENGINEER MILAD © 2026</span>
-            </div>
-
-        </section>
-
-
-        <!-- MARQUEE -->
-
-        <section class="marquee-section">
-
-            <div class="marquee-track">
-                <span>DESIGN</span><i>✳</i>
-                <span>DEVELOPMENT</span><i>✳</i>
-                <span>CREATIVITY</span><i>✳</i>
-                <span>TECHNOLOGY</span><i>✳</i>
-                <span>DESIGN</span><i>✳</i>
-                <span>DEVELOPMENT</span><i>✳</i>
-                <span>CREATIVITY</span><i>✳</i>
-                <span>TECHNOLOGY</span><i>✳</i>
-            </div>
-
-        </section>
-
-
-        <!-- ABOUT -->
-
-        <section class="section about-section" id="about">
-
-            <div class="section-heading reveal">
-                <div>
-                    <span class="section-index">01 / WHO I AM</span>
-                    <h2 data-en="BEYOND THE <span>CODE.</span>"
-                        data-fa="فراتر از <span>کدنویسی.</span>">
-                        BEYOND THE <span>CODE.</span>
-                    </h2>
-                </div>
-
-                <span class="heading-symbol">✳</span>
-            </div>
-
-            <div class="about-layout">
-
-                <div class="about-big-text reveal">
-
-                    <span class="giant-number">01</span>
-
-                    <h3 data-en="THINK.<br>CREATE.<br><span>REPEAT.</span>"
-                        data-fa="فکر کن.<br>خلق کن.<br><span>تکرار کن.</span>">
-                        THINK.<br>CREATE.<br><span>REPEAT.</span>
-                    </h3>
-
-                </div>
-
-                <div class="about-details reveal">
-
-                    <span class="red-line"></span>
-
-                    <h3 data-en="Hello, I'm Milad."
-                        data-fa="سلام، من میلاد هستم.">
-                        Hello, I'm Milad.
-                    </h3>
-
-                    <p data-en="An aspiring software engineer with a passion for technology, programming and creative digital experiences."
-                       data-fa="من میلاد هستم؛ علاقه‌مند به مهندسی نرم‌افزار، فناوری، برنامه‌نویسی و خلق تجربه‌های دیجیتال خلاقانه.">
-                        An aspiring software engineer with a passion for technology, programming and creative digital experiences.
-                    </p>
-
-                    <p data-en="I believe every great project starts with curiosity. My journey is about learning new skills, experimenting with ideas and turning imagination into something real."
-                       data-fa="باور دارم هر پروژه بزرگ با کنجکاوی شروع می‌شود. مسیر من درباره یادگیری مهارت‌های جدید، آزمایش ایده‌ها و تبدیل تخیل به واقعیت است.">
-                        I believe every great project starts with curiosity. My journey is about learning new skills, experimenting with ideas and turning imagination into something real.
-                    </p>
-
-                    <div class="about-stats">
-
-                        <div class="stat">
-                            <strong>∞</strong>
-                            <span data-en="IDEAS" data-fa="ایده‌ها">IDEAS</span>
-                        </div>
-
-                        <div class="stat">
-                            <strong>24/7</strong>
-                            <span data-en="CURIOSITY" data-fa="کنجکاوی">CURIOSITY</span>
-                        </div>
-
-                        <div class="stat">
-                            <strong>01</strong>
-                            <span data-en="MISSION" data-fa="ماموریت">MISSION</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- SKILLS -->
-
-        <section class="section skills-section" id="skills">
-
-            <div class="section-heading reveal">
 
                 <div>
-                    <span class="section-index">02 / CAPABILITIES</span>
-                    <h2 data-en="MY <span>ARSENAL.</span>"
-                        data-fa="<span>مهارت‌های</span> من.">
-                        MY <span>ARSENAL.</span>
-                    </h2>
+                    <span>02</span>
+                    <strong data-en="Continuous Learning" data-fa="یادگیری مداوم">Continuous Learning</strong>
                 </div>
 
-                <span class="heading-symbol">⌘</span>
+                <div>
+                    <span>03</span>
+                    <strong data-en="Building Ideas" data-fa="ساخت ایده‌ها">Building Ideas</strong>
+                </div>
 
             </div>
 
-            <p class="section-description reveal"
-               data-en="Tools and technologies I'm exploring to build better digital experiences."
-               data-fa="ابزارها و فناوری‌هایی که برای ساخت تجربه‌های دیجیتال بهتر یاد می‌گیرم.">
-                Tools and technologies I'm exploring to build better digital experiences.
+            <a href="#contact" class="text-link">
+                <span data-en="LET'S CONNECT" data-fa="با من در ارتباط باشید">LET'S CONNECT</span>
+                ↗
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+<section class="section skills-section" id="skills">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="section-number">02 — CAPABILITIES</span>
+            <h2 data-en="Tools of my <span>craft.</span>" data-fa="ابزارهای <span>من.</span>">
+                Tools of my <span>craft.</span>
+            </h2>
+        </div>
+
+        <p data-en="Technologies and abilities I explore and develop." data-fa="تکنولوژی‌ها و مهارت‌هایی که دنبال یادگیری و توسعه آن‌ها هستم.">
+            Technologies and abilities I explore and develop.
+        </p>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+
+            <div class="skill-top">
+                <span class="skill-symbol">&lt;/&gt;</span>
+                <span class="skill-index">01</span>
+            </div>
+
+            <h3>HTML</h3>
+
+            <p data-en="Building structured web experiences." data-fa="ساخت ساختار صفحات وب.">
+                Building structured web experiences.
             </p>
 
-            <div class="skills-grid">
+            <div class="skill-line"><span style="width:85%"></span></div>
 
-                <div class="skill-card reveal">
-                    <span class="skill-number">01</span>
-                    <div class="skill-icon">&lt;/&gt;</div>
-                    <h3>HTML</h3>
-                    <p data-en="Web structure" data-fa="ساختار صفحات وب">Web structure</p>
-                    <div class="skill-footer"><span>01</span><span>FOUNDATION</span></div>
-                </div>
+        </div>
 
-                <div class="skill-card reveal">
-                    <span class="skill-number">02</span>
-                    <div class="skill-icon">✳</div>
-                    <h3>CSS</h3>
-                    <p data-en="Visual experiences" data-fa="تجربه‌های بصری">Visual experiences</p>
-                    <div class="skill-footer"><span>02</span><span>DESIGN</span></div>
-                </div>
 
-                <div class="skill-card reveal">
-                    <span class="skill-number">03</span>
-                    <div class="skill-icon">{ }</div>
-                    <h3>JavaScript</h3>
-                    <p data-en="Interactive interfaces" data-fa="رابط‌های تعاملی">Interactive interfaces</p>
-                    <div class="skill-footer"><span>03</span><span>LOGIC</span></div>
-                </div>
+        <div class="skill-card">
 
-                <div class="skill-card reveal">
-                    <span class="skill-number">04</span>
-                    <div class="skill-icon">⌘</div>
-                    <h3>GitHub</h3>
-                    <p data-en="Version control" data-fa="مدیریت نسخه‌ها">Version control</p>
-                    <div class="skill-footer"><span>04</span><span>WORKFLOW</span></div>
-                </div>
-
+            <div class="skill-top">
+                <span class="skill-symbol">#</span>
+                <span class="skill-index">02</span>
             </div>
 
-            <div class="tech-strip reveal">
-                <span>TECH STACK</span>
-                <div>HTML5</div>
-                <div>CSS3</div>
-                <div>JAVASCRIPT</div>
-                <div>GIT</div>
-                <div>GITHUB</div>
-            </div>
+            <h3>CSS</h3>
 
-        </section>
-
-
-        <!-- PROJECTS -->
-
-        <section class="section projects-section" id="projects">
-
-            <div class="section-heading reveal">
-
-                <div>
-                    <span class="section-index">03 / SELECTED WORK</span>
-                    <h2 data-en="DIGITAL <span>CREATIONS.</span>"
-                        data-fa="<span>آثار</span> دیجیتال.">
-                        DIGITAL <span>CREATIONS.</span>
-                    </h2>
-                </div>
-
-                <span class="heading-symbol">↗</span>
-
-            </div>
-
-            <p class="section-description reveal"
-               data-en="A collection of experiments, ideas and projects."
-               data-fa="مجموعه‌ای از تجربه‌ها، ایده‌ها و پروژه‌ها.">
-                A collection of experiments, ideas and projects.
+            <p data-en="Creating visual systems and interfaces." data-fa="طراحی ظاهر و رابط‌های کاربری.">
+                Creating visual systems and interfaces.
             </p>
 
-            <div class="projects-grid">
+            <div class="skill-line"><span style="width:75%"></span></div>
 
-                <article class="project-card reveal">
-
-                    <div class="project-image project-one">
-
-                        <span class="project-category">01 / PORTFOLIO</span>
-
-                        <div class="project-graphic graphic-one">
-                            <div class="graphic-circle"></div>
-                            <div class="graphic-square"></div>
-                            <strong>EM<span>.</span></strong>
-                        </div>
-
-                        <span class="project-arrow">↗</span>
-
-                    </div>
-
-                    <div class="project-information">
-
-                        <div>
-                            <h3 data-en="Personal Portfolio"
-                                data-fa="پورتفولیوی شخصی">
-                                Personal Portfolio
-                            </h3>
-
-                            <p data-en="A digital identity and personal website."
-                               data-fa="هویت دیجیتال و وب‌سایت شخصی.">
-                                A digital identity and personal website.
-                            </p>
-                        </div>
-
-                        <span class="project-tag">HTML / CSS / JS</span>
-
-                    </div>
-
-                </article>
+        </div>
 
 
-                <article class="project-card reveal">
+        <div class="skill-card">
 
-                    <div class="project-image project-two">
-
-                        <span class="project-category">02 / EXPERIMENT</span>
-
-                        <div class="project-graphic graphic-two">
-                            <div class="rings"></div>
-                            <div class="red-core"></div>
-                            <span>FUTURE</span>
-                        </div>
-
-                        <span class="project-arrow">↗</span>
-
-                    </div>
-
-                    <div class="project-information">
-
-                        <div>
-                            <h3 data-en="Visual Experiments"
-                                data-fa="آزمایش‌های بصری">
-                                Visual Experiments
-                            </h3>
-
-                            <p data-en="Exploring motion, shapes and digital art."
-                               data-fa="کشف حرکت، اشکال و هنر دیجیتال.">
-                                Exploring motion, shapes and digital art.
-                            </p>
-                        </div>
-
-                        <span class="project-tag">DESIGN / CODE</span>
-
-                    </div>
-
-                </article>
-
-
-                <article class="project-card reveal">
-
-                    <div class="project-image project-three">
-
-                        <span class="project-category">03 / INTERFACE</span>
-
-                        <div class="project-graphic graphic-three">
-                            <div class="interface-box">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <strong>INTERFACE_01</strong>
-                                <div class="interface-lines"></div>
-                            </div>
-                        </div>
-
-                        <span class="project-arrow">↗</span>
-
-                    </div>
-
-                    <div class="project-information">
-
-                        <div>
-                            <h3 data-en="Interface Concepts"
-                                data-fa="مفاهیم رابط کاربری">
-                                Interface Concepts
-                            </h3>
-
-                            <p data-en="Creative concepts for modern web interfaces."
-                               data-fa="مفاهیم خلاقانه برای رابط‌های وب مدرن.">
-                                Creative concepts for modern web interfaces.
-                            </p>
-                        </div>
-
-                        <span class="project-tag">UI / UX</span>
-
-                    </div>
-
-                </article>
-
-
-                <article class="project-card reveal">
-
-                    <div class="project-image project-four">
-
-                        <span class="project-category">04 / COMING SOON</span>
-
-                        <div class="project-graphic graphic-four">
-                            <div class="coming-orbit"></div>
-                            <strong>?</strong>
-                            <span>UNDER DEVELOPMENT</span>
-                        </div>
-
-                        <span class="project-arrow">↗</span>
-
-                    </div>
-
-                    <div class="project-information">
-
-                        <div>
-                            <h3 data-en="Next Dimension"
-                                data-fa="بُعد بعدی">
-                                Next Dimension
-                            </h3>
-
-                            <p data-en="The next chapter is being created."
-                               data-fa="فصل بعدی در حال ساخته شدن است.">
-                                The next chapter is being created.
-                            </p>
-                        </div>
-
-                        <span class="project-tag">IN PROGRESS</span>
-
-                    </div>
-
-                </article>
-
+            <div class="skill-top">
+                <span class="skill-symbol">JS</span>
+                <span class="skill-index">03</span>
             </div>
 
-        </section>
+            <h3>JavaScript</h3>
+
+            <p data-en="Making websites interactive and dynamic." data-fa="ایجاد تعامل و پویایی در سایت‌ها.">
+                Making websites interactive and dynamic.
+            </p>
+
+            <div class="skill-line"><span style="width:55%"></span></div>
+
+        </div>
 
 
-        <!-- JOURNEY -->
+        <div class="skill-card">
 
-        <section class="section journey-section" id="journey">
+            <div class="skill-top">
+                <span class="skill-symbol">✧</span>
+                <span class="skill-index">04</span>
+            </div>
 
-            <div class="section-heading reveal">
+            <h3 data-en="UI / UX" data-fa="رابط و تجربه کاربری">UI / UX</h3>
 
-                <div>
-                    <span class="section-index">04 / THE PROCESS</span>
-                    <h2 data-en="THE <span>JOURNEY.</span>"
-                        data-fa="<span>مسیر</span> من.">
-                        THE <span>JOURNEY.</span>
-                    </h2>
+            <p data-en="Designing clear and meaningful experiences." data-fa="طراحی تجربه‌های ساده و کاربردی.">
+                Designing clear and meaningful experiences.
+            </p>
+
+            <div class="skill-line"><span style="width:65%"></span></div>
+
+        </div>
+
+    </div>
+
+    <p class="skills-note" data-en="Skill levels are illustrative and will evolve with experience." data-fa="سطح مهارت‌ها نمایشی است و با کسب تجربه تغییر می‌کند.">
+        Skill levels are illustrative and will evolve with experience.
+    </p>
+
+</section>
+
+
+<!-- SERVICES -->
+<section class="section services-section" id="services">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="section-number">03 — WHAT I DO</span>
+            <h2 data-en="Ideas into <span>reality.</span>" data-fa="تبدیل ایده به <span>واقعیت.</span>">
+                Ideas into <span>reality.</span>
+            </h2>
+        </div>
+
+        <p data-en="A look at the creative directions I enjoy exploring." data-fa="نگاهی به زمینه‌های خلاقانه‌ای که به آن‌ها علاقه دارم.">
+            A look at the creative directions I enjoy exploring.
+        </p>
+
+    </div>
+
+
+    <div class="services-list">
+
+        <div class="service-item">
+
+            <span class="service-number">01</span>
+
+            <div>
+                <h3 data-en="Web Development" data-fa="توسعه وب">Web Development</h3>
+                <p data-en="Modern, responsive and thoughtful websites." data-fa="وب‌سایت‌های مدرن، واکنش‌گرا و کاربردی.">
+                    Modern, responsive and thoughtful websites.
+                </p>
+            </div>
+
+            <span class="service-arrow">↗</span>
+
+        </div>
+
+
+        <div class="service-item">
+
+            <span class="service-number">02</span>
+
+            <div>
+                <h3 data-en="Digital Design" data-fa="طراحی دیجیتال">Digital Design</h3>
+                <p data-en="Visual concepts with a clear identity." data-fa="ایده‌های بصری با هویت مشخص.">
+                    Visual concepts with a clear identity.
+                </p>
+            </div>
+
+            <span class="service-arrow">↗</span>
+
+        </div>
+
+
+        <div class="service-item">
+
+            <span class="service-number">03</span>
+
+            <div>
+                <h3 data-en="Creative Experiments" data-fa="آزمایش‌های خلاقانه">Creative Experiments</h3>
+                <p data-en="Exploring new ideas through technology." data-fa="کشف ایده‌های تازه با کمک تکنولوژی.">
+                    Exploring new ideas through technology.
+                </p>
+            </div>
+
+            <span class="service-arrow">↗</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+<section class="section projects-section" id="projects">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="section-number">04 — SELECTED WORK</span>
+            <h2 data-en="Selected <span>projects.</span>" data-fa="<span>پروژه‌های</span> منتخب.">
+                Selected <span>projects.</span>
+            </h2>
+        </div>
+
+        <p data-en="Ideas, experiments and digital creations." data-fa="ایده‌ها، تجربه‌ها و ساخته‌های دیجیتال.">
+            Ideas, experiments and digital creations.
+        </p>
+
+    </div>
+
+
+    <div class="projects-grid">
+
+
+        <article class="project-card">
+
+            <div class="project-image project-image-one">
+
+                <span class="project-tag">PROJECT / 001</span>
+
+                <div class="project-art-text">
+                    EM<span>.</span>
                 </div>
 
-                <span class="heading-symbol">∞</span>
+                <div class="project-art-circle"></div>
+
+                <span class="project-bottom-label">DIGITAL IDENTITY</span>
 
             </div>
 
-            <div class="timeline">
+            <div class="project-info">
 
-                <div class="timeline-item reveal">
-                    <div class="timeline-marker">01</div>
-                    <div class="timeline-content">
-                        <span>PHASE 01</span>
-             
+                <div>
+                    <span data-en="PERSONAL BRANDING" data-fa="هویت شخصی">PERSONAL BRANDING</span>
+                    <h3 data-en="Personal Portfolio" data-fa="وب‌سایت شخصی">Personal Portfolio</h3>
+                </div>
+
+                <span class="project-arrow">↗</span>
+
+            </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+            <div class="project-image project-image-two">
+
+                <span class="project-tag">PROJECT / 002</span>
+
+                <div class="project-window">
+
+                    <div class="window-dots">
+                        <i></i><i></i><i></i>
+                    </div>
+
+                    <div class="window-content">
+                        <span>CREATIVE</span>
+                        <strong>IDEAS<span>.</span></strong>
+                        <div class="window-line"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="project-info">
+
+                <div>
+                    <span data-en="WEB EXPERIMENT" data-fa="آزمایش وب">WEB EXPERIMENT</span>
+                    <h3 data-en="Digital Playground" data-fa="فضای آزمایش دیجیتال">Digital Playground</h3>
+                </div>
+
+                <span class="project-arrow">↗</span>
+
+            </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+            <div class="project-image project-image-three">
+
+                <span class="project-tag">PROJECT / 003</span>
+
+                <div class="project-orbit">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+                <span class="orbit-text">FUTURE / 2026</span>
+
+            </div>
+
+            <div class="project-info">
+
+                <div>
+                    <span data-en="VISUAL CONCEPT" data-fa="مفهوم بصری">VISUAL CONCEPT</span>
+                    <h3 data-en="Future Vision" data-fa="نگاه به آینده">Future Vision</h3>
+                </div>
+
+                <span class="project-arrow">↗</span>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+    <p class="project-disclaimer" data-en="Concept projects created for portfolio presentation." data-fa="این پروژه‌ها نمونه‌های مفهومی برای نمایش در پورتفولیو هستند.">
+        Concept projects created for portfolio presentation.
+    </p>
+
+</section>
+
+
+<!-- JOURNEY -->
+<section class="section journey-section" id="journey">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="section-number">05 — THE JOURNEY</span>
+            <h2 data-en="Always <span>evolving.</span>" data-fa="همیشه در حال <span>پیشرفت.</span>">
+                Always <span>evolving.</span>
+            </h2>
+        </div>
+
+        <p data-en="Every step is part of a bigger picture." data-fa="هر قدم بخشی از یک تصویر بزرگ‌تر است.">
+            Every step is part of a bigger picture.
+        </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <div class="timeline-marker"></div>
+
+            <div class="timeline-date">01 / BEGINNING</div>
+
+            <div class="timeline-content">
+                <h3 data-en="The First Spark" data-fa="اولین جرقه">The First Spark</h3>
+                <p data-en="Discovering technology and becoming curious about how digital things work."
+                   data-fa="آشنایی با تکنولوژی و کنجکاوی درباره نحوه کار دنیای دیجیتال.">
+                    Discovering technology and becoming curious about how digital things work.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-marker"></div>
+
+            <div class="timeline-date">02 / LEARNING</div>
+
+            <div class="timeline-content">
+                <h3 data-en="Learning by Building" data-fa="یادگیری با ساختن">Learning by Building</h3>
+                <p data-en="Exploring programming, web technologies and creative tools."
+                   data-fa="یادگیری برنامه‌نویسی، تکنولوژی‌های وب و ابزارهای خلاقانه.">
+                    Exploring programming, web technologies and creative tools.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-marker active-marker"></div>
+
+            <div class="timeline-date">03 / NOW</div>
+
+            <div class="timeline-content">
+                <h3 data-en="Creating New Possibilities" data-fa="ساخت فرصت‌های جدید">Creating New Possibilities</h3>
+                <p data-en="Turning knowledge into projects and continuing to improve."
+                   data-fa="تبدیل دانش به پروژه و ادامه مسیر پیشرفت.">
+                    Turning knowledge into projects and continuing to improve.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-marker"></div>
+
+            <div class="timeline-date">04 / FUTURE</div>
+
+            <div class="timeline-content">
+                <h3 data-en="Beyond the Horizon" data-fa="فراتر از افق">Beyond the Horizon</h3>
+                <p data-en="Exploring new technologies and building more ambitious ideas."
+                   data-fa="کشف تکنولوژی‌های تازه و ساخت ایده‌های بزرگ‌تر.">
+                    Exploring new technologies and building more ambitious 
