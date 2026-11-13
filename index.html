@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090909">
-  <meta name="description" content="وب‌سایت شخصی میلاد حیدری؛ طراح وب و علاقه‌مند به ساخت تجربه‌های دیجیتال مدرن.">
-  <title>MILAD HEIDARI
-WEB DESIGNER</title>
+  <meta name="theme-color" content="#09090b">
+  <meta name="description" content="Milad Heidari — Web Designer & Front-end Developer.">
+  <title>میلاد حیدری | طراح وب</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,475 +17,380 @@ WEB DESIGNER</title>
 <body class="fa">
 
   <div class="loader" id="loader">
-    <div class="loader-mark">MH<span>.</span></div>
-    <div class="loader-name" data-en="MILAD HEIDARI" data-fa="میلاد حیدری">میلاد حیدری</div>
-    <div class="loader-line"><i></i></div>
+    <div class="loader-logo">MH<span>.</span></div>
+    <p data-fa="در حال آماده‌سازی تجربه..." data-en="Preparing the experience..." data-ar="جارٍ تجهيز التجربة..." data-de="Erlebnis wird vorbereitet...">در حال آماده‌سازی تجربه...</p>
+    <div class="loader-progress"><i></i></div>
   </div>
 
+  <div class="noise"></div>
   <div class="ambient ambient-one"></div>
   <div class="ambient ambient-two"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
 
-  <header class="site-header">
-
-    <a class="brand" href="#home">
-      <b class="brand-mark">MH<span>.</span></b>
-      <span data-en="MILAD HEIDARI" data-fa="میلاد حیدری">میلاد حیدری</span>
+  <header class="site-header" id="header">
+    <a class="brand" href="#home" aria-label="Milad Heidari">
+      <span class="brand-mark">MH<span>.</span></span>
+      <span class="brand-name">MILAD HEIDARI</span>
     </a>
 
     <nav class="navigation" id="navigation">
-      <a href="#home" data-en="Home" data-fa="خانه">خانه</a>
-      <a href="#about" data-en="About" data-fa="درباره من">درباره من</a>
-      <a href="#skills" data-en="Skills" data-fa="مهارت‌ها">مهارت‌ها</a>
-      <a href="#services" data-en="Services" data-fa="خدمات">خدمات</a>
-      <a href="#projects" data-en="Projects" data-fa="پروژه‌ها">پروژه‌ها</a>
-      <a href="#journey" data-en="Journey" data-fa="مسیر من">مسیر من</a>
-      <a href="#contact" data-en="Contact" data-fa="ارتباط">ارتباط</a>
+      <a href="#home" data-fa="خانه" data-en="Home" data-ar="الرئيسية" data-de="Start">خانه</a>
+      <a href="#about" data-fa="درباره من" data-en="About" data-ar="عني" data-de="Über mich">درباره من</a>
+      <a href="#skills" data-fa="مهارت‌ها" data-en="Skills" data-ar="المهارات" data-de="Fähigkeiten">مهارت‌ها</a>
+      <a href="#services" data-fa="خدمات" data-en="Services" data-ar="الخدمات" data-de="Leistungen">خدمات</a>
+      <a href="#projects" data-fa="پروژه‌ها" data-en="Projects" data-ar="المشاريع" data-de="Projekte">پروژه‌ها</a>
+      <a href="#journey" data-fa="مسیر من" data-en="Journey" data-ar="رحلتي" data-de="Mein Weg">مسیر من</a>
+      <a href="#contact" data-fa="ارتباط" data-en="Contact" data-ar="تواصل" data-de="Kontakt">ارتباط</a>
     </nav>
 
     <div class="header-actions">
-      <button id="languageToggle" class="language-toggle" type="button">EN</button>
-
-      <button id="menuToggle" class="menu-toggle" type="button"
-        aria-label="باز کردن منو" aria-expanded="false">
-        <i></i>
-        <i></i>
+      <button class="language-toggle" id="languageToggle" type="button" aria-label="Change language">EN</button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <i></i><i></i>
       </button>
     </div>
-
   </header>
 
   <main>
 
     <!-- HERO -->
     <section class="hero section" id="home">
-
       <div class="hero-copy">
+        <div class="availability reveal">
+          <span class="availability-dot"></span>
+          <span data-fa="همیشه در حال یادگیری و خلق کردن" data-en="Always learning & creating" data-ar="دائم التعلم والإبداع" data-de="Immer am Lernen und Gestalten">همیشه در حال یادگیری و خلق کردن</span>
+        </div>
 
-        <p class="eyebrow">
+        <p class="eyebrow reveal">
           <i></i>
-          <span data-en="CREATIVE DIGITAL PORTFOLIO"
-            data-fa="نمونه‌کارهای خلاقانه دیجیتال">
-            نمونه‌کارهای خلاقانه دیجیتال
-          </span>
+          <span data-fa="طراحی خلاقانه · تجربه دیجیتال" data-en="CREATIVE DESIGN · DIGITAL EXPERIENCE" data-ar="تصميم إبداعي · تجربة رقمية" data-de="KREATIVES DESIGN · DIGITALES ERLEBNIS">طراحی خلاقانه · تجربه دیجیتال</span>
         </p>
 
-        <h1>
-          <span class="hero-name"
-            data-en="MILAD HEIDARI"
-            data-fa="میلاد حیدری">
-            میلاد حیدری
-          </span>
-
-          <span class="hero-role"
-            data-en="WEB DESIGNER"
-            data-fa="مهندس طراحی وب">
-            مهندس طراحی وب
-          </span>
+        <h1 class="reveal">
+          <span class="hero-name" data-fa="میلاد حیدری" data-en="MILAD HEIDARI" data-ar="ميلاد حيدري" data-de="MILAD HEIDARI">میلاد حیدری</span>
+          <span class="hero-role" data-fa="طراح وب و خالق تجربه‌های دیجیتال." data-en="WEB DESIGNER & DIGITAL CREATOR." data-ar="مصمم ويب وصانع تجارب رقمية." data-de="WEBDESIGNER & DIGITAL CREATOR.">طراح وب و خالق تجربه‌های دیجیتال.</span>
         </h1>
 
-        <p class="hero-description"
-          data-en="I design and build modern digital experiences with clean interfaces, thoughtful details, and meaningful interactions."
-          data-fa="من تجربه‌های دیجیتال مدرن و کاربردی طراحی می‌کنم؛ با تمرکز بر رابط کاربری تمیز، جزئیات دقیق و تعامل‌های جذاب.">
-          من تجربه‌های دیجیتال مدرن و کاربردی طراحی می‌کنم؛ با تمرکز بر رابط کاربری تمیز، جزئیات دقیق و تعامل‌های جذاب.
+        <p class="hero-description reveal"
+          data-fa="ایده‌ها را به تجربه‌هایی زنده، زیبا و کاربردی تبدیل می‌کنم. برای من طراحی فقط ظاهر نیست؛ ترکیبی از خلاقیت، دقت و تجربه‌ای است که در ذهن می‌ماند."
+          data-en="I turn ideas into engaging, beautiful, and useful digital experiences. To me, design is more than appearance — it is creativity, precision, and an experience worth remembering."
+          data-ar="أحوّل الأفكار إلى تجارب رقمية جميلة وعملية وجذابة. التصميم بالنسبة لي ليس مجرد مظهر، بل مزيج من الإبداع والدقة وتجربة لا تُنسى."
+          data-de="Ich verwandle Ideen in ansprechende, schöne und praktische digitale Erlebnisse. Design bedeutet für mich mehr als nur Optik: Kreativität, Präzision und ein bleibender Eindruck.">
+          ایده‌ها را به تجربه‌هایی زنده، زیبا و کاربردی تبدیل می‌کنم. برای من طراحی فقط ظاهر نیست؛ ترکیبی از خلاقیت، دقت و تجربه‌ای است که در ذهن می‌ماند.
         </p>
 
-        <div class="hero-actions">
+        <div class="hero-actions reveal">
           <a class="button button-primary" href="#projects">
-            <span data-en="Explore my work" data-fa="دیدن پروژه‌ها">دیدن پروژه‌ها</span>
+            <span data-fa="مشاهده پروژه‌ها" data-en="Explore projects" data-ar="استكشف المشاريع" data-de="Projekte ansehen">مشاهده پروژه‌ها</span>
             <b>↗</b>
           </a>
-
-          <a class="text-link" href="#contact"
-            data-en="Let's talk" data-fa="با من در ارتباط باش">
-            با من در ارتباط باش
-          </a>
+          <a class="button button-ghost" href="#contact" data-fa="شروع گفتگو" data-en="Let's talk" data-ar="لنتحدث" data-de="Kontakt aufnehmen">شروع گفتگو</a>
         </div>
 
-        <div class="hero-meta">
-          <div><b>01</b><span data-en="Curiosity" data-fa="کنجکاوی">کنجکاوی</span></div>
-          <div><b>02</b><span data-en="Creativity" data-fa="خلاقیت">خلاقیت</span></div>
-          <div><b>03</b><span data-en="Consistency" data-fa="پشتکار">پشتکار</span></div>
+        <div class="hero-meta reveal">
+          <div><b>01</b><span data-fa="کنجکاوی" data-en="Curiosity" data-ar="الفضول" data-de="Neugier">کنجکاوی</span></div>
+          <div><b>02</b><span data-fa="خلاقیت" data-en="Creativity" data-ar="الإبداع" data-de="Kreativität">خلاقیت</span></div>
+          <div><b>03</b><span data-fa="پشتکار" data-en="Consistency" data-ar="الاستمرارية" data-de="Beständigkeit">پشتکار</span></div>
         </div>
-
       </div>
 
-      <div class="hero-visual">
-
+      <div class="hero-visual reveal">
         <div class="visual-grid"></div>
+        <div class="visual-glow"></div>
         <div class="orbit orbit-one"></div>
         <div class="orbit orbit-two"></div>
+        <div class="orbit orbit-three"></div>
 
         <div class="visual-core">
-          MH
+          <span>MH</span>
           <i></i>
         </div>
 
-        <span class="visual-caption caption-top">DESIGN — 01</span>
-        <span class="visual-caption caption-bottom">BUILD — 2026</span>
+        <div class="floating-tag tag-one">HTML / CSS</div>
+        <div class="floating-tag tag-two">CREATIVE CODE</div>
+        <div class="visual-caption caption-top">DESIGN — 001</div>
+        <div class="visual-caption caption-bottom">BUILD — 2026</div>
         <span class="visual-side">CREATIVE MIND / DIGITAL WORLD</span>
-
       </div>
 
-      <a class="scroll-cue" href="#about"
-        data-en="SCROLL TO EXPLORE ↓"
-        data-fa="برای کشف بیشتر اسکرول کن ↓">
-        برای کشف بیشتر اسکرول کن ↓
+      <a class="scroll-cue" href="#about">
+        <span data-fa="به پایین برو" data-en="SCROLL TO EXPLORE" data-ar="مرر للاستكشاف" data-de="WEITER ENTDECKEN">به پایین برو</span>
+        <b>↓</b>
       </a>
-
     </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>DESIGN WITH PURPOSE ✳ BUILD WITH PASSION ✳ THINK DIFFERENT ✳ </span>
+        <span>DESIGN WITH PURPOSE ✳ BUILD WITH PASSION ✳ THINK DIFFERENT ✳ </span>
+      </div>
+    </div>
 
     <!-- ABOUT -->
     <section class="section about-section" id="about">
-
       <div class="section-heading reveal">
-        <p class="eyebrow">
-          <i></i>
-          <span data-en="A LITTLE INTRODUCTION" data-fa="آشنایی کوتاه">آشنایی کوتاه</span>
-        </p>
-
-        <h2 data-en="Design with <em>purpose.</em>"
-          data-fa="طراحی با <em>هدف.</em>">
-          طراحی با <em>هدف.</em>
-        </h2>
+        <p class="eyebrow"><i></i><span data-fa="کمی درباره من" data-en="A LITTLE ABOUT ME" data-ar="نبذة عني" data-de="EIN WENIG ÜBER MICH">کمی درباره من</span></p>
+        <h2 data-fa="طراحی با <em>هدف.</em>" data-en="Design with <em>purpose.</em>" data-ar="تصميم له <em>هدف.</em>" data-de="Design mit <em>Absicht.</em>">طراحی با <em>هدف.</em></h2>
       </div>
 
       <div class="about-grid">
-
-        <div class="about-number">01<span>/07</span></div>
+        <div class="about-index">01 <span>/ 07</span></div>
 
         <div class="about-text reveal">
-
           <p class="lead"
-            data-en="Hello, I'm Milad — a web design enthusiast who enjoys turning ideas into clear, engaging digital experiences."
-            data-fa="سلام، من میلاد هستم؛ علاقه‌مند به طراحی وب که از تبدیل ایده‌ها به تجربه‌های دیجیتال زیبا و کاربردی لذت می‌برم.">
-            سلام، من میلاد هستم؛ علاقه‌مند به طراحی وب که از تبدیل ایده‌ها به تجربه‌های دیجیتال زیبا و کاربردی لذت می‌برم.
+            data-fa="سلام، من میلاد هستم؛ علاقه‌مند به دنیای طراحی وب و ساخت تجربه‌های دیجیتال."
+            data-en="Hello, I'm Milad — passionate about web design and building meaningful digital experiences."
+            data-ar="مرحباً، أنا ميلاد، شغوف بتصميم الويب وبناء تجارب رقمية مميزة."
+            data-de="Hallo, ich bin Milad – begeistert von Webdesign und der Entwicklung digitaler Erlebnisse.">
+            سلام، من میلاد هستم؛ علاقه‌مند به دنیای طراحی وب و ساخت تجربه‌های دیجیتال.
           </p>
-
           <p
-            data-en="A great website should be intuitive, responsive, and easy to understand. I'm always learning, experimenting, and improving my craft."
-            data-fa="یک وب‌سایت خوب باید استفاده‌ای ساده داشته باشد، روی دستگاه‌های مختلف درست نمایش داده شود و پیامش را واضح منتقل کند. همیشه در حال یادگیری و بهتر کردن مهارت‌هایم هستم.">
-            یک وب‌سایت خوب باید استفاده‌ای ساده داشته باشد، روی دستگاه‌های مختلف درست نمایش داده شود و پیامش را واضح منتقل کند. همیشه در حال یادگیری و بهتر کردن مهارت‌هایم هستم.
+            data-fa="از ترکیب رنگ‌ها، ساختارها و ایده‌ها لذت می‌برم. همیشه سعی می‌کنم چیز تازه‌ای یاد بگیرم و هر پروژه را فرصتی برای بهتر شدن ببینم."
+            data-en="I enjoy combining colors, structures, and ideas. I'm always learning something new and treating every project as an opportunity to improve."
+            data-ar="أستمتع بمزج الألوان والهياكل والأفكار. أسعى دائماً لتعلم شيء جديد وأرى في كل مشروع فرصة للتطور."
+            data-de="Ich kombiniere gerne Farben, Strukturen und Ideen. Ich lerne ständig dazu und sehe jedes Projekt als Chance, mich weiterzuentwickeln.">
+            از ترکیب رنگ‌ها، ساختارها و ایده‌ها لذت می‌برم. همیشه سعی می‌کنم چیز تازه‌ای یاد بگیرم و هر پروژه را فرصتی برای بهتر شدن ببینم.
           </p>
-
-          <a class="text-link" href="#journey"
-            data-en="Discover my journey ↗"
-            data-fa="مسیر من را ببین ↗">
-            مسیر من را ببین ↗
-          </a>
-
+          <a class="text-link" href="#journey" data-fa="مسیر من را بشناس ↗" data-en="Discover my journey ↗" data-ar="اكتشف رحلتي ↗" data-de="Entdecke meinen Weg ↗">مسیر من را بشناس ↗</a>
         </div>
 
         <div class="about-card reveal">
-          <small>MH / 2026</small>
-
-          <strong
-            data-en="Curious by nature.<br>Creative by choice."
-            data-fa="ذاتاً کنجکاو؛<br>با انتخاب خلاق.">
-            ذاتاً کنجکاو؛<br>با انتخاب خلاق.
-          </strong>
-
-          <i></i>
-
-          <small data-en="ALWAYS IN PROGRESS" data-fa="همیشه در حال پیشرفت">
-            همیشه در حال پیشرفت
-          </small>
+          <div class="card-top"><span>MH / 2026</span><span>✳</span></div>
+          <strong data-fa="کنجکاو در ذات.<br>خلاق در انتخاب." data-en="Curious by nature.<br>Creative by choice." data-ar="فضولي بطبيعتي.<br>مبدع باختياري." data-de="Von Natur aus neugierig.<br>Mit Absicht kreativ.">کنجکاو در ذات.<br>خلاق در انتخاب.</strong>
+          <div class="card-line"></div>
+          <small data-fa="همیشه در حال پیشرفت" data-en="ALWAYS IN PROGRESS" data-ar="دائماً في تطور" data-de="IMMER IN ENTWICKLUNG">همیشه در حال پیشرفت</small>
         </div>
-
       </div>
+    </section>
 
+    <!-- STATS -->
+    <section class="stats-section section">
+      <div class="stats-grid">
+        <div class="stat reveal"><strong>∞</strong><span data-fa="ایده‌های تازه" data-en="Fresh ideas" data-ar="أفكار جديدة" data-de="Neue Ideen">ایده‌های تازه</span></div>
+        <div class="stat reveal"><strong>24/7</strong><span data-fa="ذهن کنجکاو" data-en="Curious mind" data-ar="عقل فضولي" data-de="Neugieriger Geist">ذهن کنجکاو</span></div>
+        <div class="stat reveal"><strong>100%</strong><span data-fa="اشتیاق به یادگیری" data-en="Passion for learning" data-ar="الشغف بالتعلم" data-de="Lernleidenschaft">اشتیاق به یادگیری</span></div>
+      </div>
     </section>
 
     <!-- SKILLS -->
     <section class="section" id="skills">
-
       <div class="section-heading reveal">
-        <p class="eyebrow">
-          <i></i>
-          <span data-en="WHAT I WORK WITH" data-fa="مهارت‌های من">مهارت‌های من</span>
-        </p>
-
-        <h2 data-en="Skills & <em>tools.</em>"
-          data-fa="مهارت‌ها و <em>ابزارها.</em>">
-          مهارت‌ها و <em>ابزارها.</em>
-        </h2>
+        <p class="eyebrow"><i></i><span data-fa="ابزارهای من" data-en="MY TOOLKIT" data-ar="أدواتي" data-de="MEIN WERKZEUGKASTEN">ابزارهای من</span></p>
+        <h2 data-fa="مهارت‌ها و <em>ابزارها.</em>" data-en="Skills & <em>tools.</em>" data-ar="المهارات و <em>الأدوات.</em>" data-de="Skills & <em>Tools.</em>">مهارت‌ها و <em>ابزارها.</em></h2>
       </div>
 
       <div class="skills-layout">
-
-        <p class="skills-intro reveal"
-          data-en="A growing toolkit for building thoughtful websites — from structure and styling to interaction and polish."
-          data-fa="مهارت‌هایی که برای ساخت وب‌سایت‌های دقیق و کاربردی در حال گسترش آن‌ها هستم؛ از ساختار و ظاهر تا تعامل و جزئیات نهایی.">
-          مهارت‌هایی که برای ساخت وب‌سایت‌های دقیق و کاربردی در حال گسترش آن‌ها هستم؛ از ساختار و ظاهر تا تعامل و جزئیات نهایی.
-        </p>
+        <div class="skills-intro reveal">
+          <span class="big-symbol">✳</span>
+          <h3 data-fa="در حال ساختن،<br>در حال یادگیری." data-en="Building,<br>learning, evolving." data-ar="أبني،<br>أتعلم، أتطور." data-de="Gestalten,<br>lernen, wachsen.">در حال ساختن،<br>در حال یادگیری.</h3>
+          <p data-fa="این مهارت‌ها بخشی از مسیر یادگیری و تجربه من هستند و هر روز برای بهتر شدن آن‌ها تلاش می‌کنم."
+             data-en="These skills are part of my learning journey, and I work to improve them every day."
+             data-ar="هذه المهارات جزء من رحلتي التعليمية، وأسعى إلى تطويرها كل يوم."
+             data-de="Diese Fähigkeiten sind Teil meines Lernwegs. Ich arbeite täglich daran, sie zu verbessern.">
+            این مهارت‌ها بخشی از مسیر یادگیری و تجربه من هستند و هر روز برای بهتر شدن آن‌ها تلاش می‌کنم.
+          </p>
+        </div>
 
         <div class="skill-list">
-
           <div class="skill-item reveal">
-            <div>
-              <b>HTML</b>
-              <small data-en="Structure & semantics" data-fa="ساختار و معناشناسی">ساختار و معناشناسی</small>
-            </div>
-            <span>01</span>
-            <div class="skill-track"><i style="--level:88%"></i></div>
+            <div class="skill-label"><b>HTML</b><small data-fa="ساختار و معناشناسی" data-en="Structure & semantics" data-ar="البنية والدلالات" data-de="Struktur & Semantik">ساختار و معناشناسی</small></div>
+            <span>01</span><div class="skill-track"><i style="--level:88%"></i></div>
           </div>
-
           <div class="skill-item reveal">
-            <div>
-              <b>CSS</b>
-              <small data-en="Layout & visual design" data-fa="چیدمان و طراحی بصری">چیدمان و طراحی بصری</small>
-            </div>
-            <span>02</span>
-            <div class="skill-track"><i style="--level:82%"></i></div>
+            <div class="skill-label"><b>CSS</b><small data-fa="چیدمان و طراحی بصری" data-en="Layout & visual design" data-ar="التنسيق والتصميم البصري" data-de="Layout & visuelles Design">چیدمان و طراحی بصری</small></div>
+            <span>02</span><div class="skill-track"><i style="--level:82%"></i></div>
           </div>
-
           <div class="skill-item reveal">
-            <div>
-              <b>JAVASCRIPT</b>
-              <small data-en="Interaction & logic" data-fa="تعامل و منطق">تعامل و منطق</small>
-            </div>
-            <span>03</span>
-            <div class="skill-track"><i style="--level:62%"></i></div>
+            <div class="skill-label"><b>JAVASCRIPT</b><small data-fa="تعامل و منطق" data-en="Interaction & logic" data-ar="التفاعل والمنطق" data-de="Interaktion & Logik">تعامل و منطق</small></div>
+            <span>03</span><div class="skill-track"><i style="--level:62%"></i></div>
           </div>
-
           <div class="skill-item reveal">
-            <div>
-              <b>RESPONSIVE DESIGN</b>
-              <small data-en="Mobile-first layouts" data-fa="طراحی واکنش‌گرا">طراحی واکنش‌گرا</small>
-            </div>
-            <span>04</span>
-            <div class="skill-track"><i style="--level:78%"></i></div>
+            <div class="skill-label"><b>RESPONSIVE DESIGN</b><small data-fa="طراحی واکنش‌گرا" data-en="Mobile-first layouts" data-ar="تصميم متجاوب" data-de="Responsives Design">طراحی واکنش‌گرا</small></div>
+            <span>04</span><div class="skill-track"><i style="--level:78%"></i></div>
           </div>
-
+          <div class="skill-item reveal">
+            <div class="skill-label"><b>UI / UX</b><small data-fa="تجربه و رابط کاربری" data-en="User interface & experience" data-ar="واجهة وتجربة المستخدم" data-de="Benutzeroberfläche & Erlebnis">تجربه و رابط کاربری</small></div>
+            <span>05</span><div class="skill-track"><i style="--level:68%"></i></div>
+          </div>
         </div>
       </div>
-
     </section>
 
     <!-- SERVICES -->
     <section class="section services-section" id="services">
-
       <div class="section-heading reveal">
-        <p class="eyebrow">
-          <i></i>
-          <span data-en="HOW I CAN HELP" data-fa="زمینه‌های فعالیت">زمینه‌های فعالیت</span>
-        </p>
-
-        <h2 data-en="What I <em>create.</em>"
-          data-fa="چه چیزهایی <em>می‌سازم.</em>">
-          چه چیزهایی <em>می‌سازم.</em>
-        </h2>
+        <p class="eyebrow"><i></i><span data-fa="چه کاری انجام می‌دهم؟" data-en="WHAT I DO" data-ar="ماذا أقدم؟" data-de="WAS ICH MACHE">چه کاری انجام می‌دهم؟</span></p>
+        <h2 data-fa="ایده‌ها را <em>می‌سازم.</em>" data-en="Ideas into <em>experiences.</em>" data-ar="أحوّل الأفكار إلى <em>تجارب.</em>" data-de="Ideen werden zu <em>Erlebnissen.</em>">ایده‌ها را <em>می‌سازم.</em></h2>
       </div>
 
       <div class="service-grid">
-
         <article class="service-card reveal">
-          <small>01</small>
+          <div class="service-top"><small>01 / 03</small><span>✳</span></div>
           <div class="service-icon">✳</div>
-          <h3 data-en="Web Design" data-fa="طراحی وب">طراحی وب</h3>
-          <p data-en="Modern visual layouts that communicate clearly and give each brand its own character."
-            data-fa="چیدمان‌های بصری مدرن که پیام را واضح منتقل می‌کنند و به هر برند شخصیت مخصوص خودش را می‌دهند.">
-            چیدمان‌های بصری مدرن که پیام را واضح منتقل می‌کنند و به هر برند شخصیت مخصوص خودش را می‌دهند.
+          <h3 data-fa="طراحی وب" data-en="Web Design" data-ar="تصميم الويب" data-de="Webdesign">طراحی وب</h3>
+          <p data-fa="طراحی ظاهر مدرن و اختصاصی برای وب‌سایت‌هایی که شخصیت و هویت خودشان را دارند."
+             data-en="Modern, distinctive visual designs for websites with their own personality."
+             data-ar="تصميمات بصرية حديثة ومميزة لمواقع ذات شخصية وهوية خاصة."
+             data-de="Moderne, individuelle Designs für Websites mit eigenem Charakter.">
+            طراحی ظاهر مدرن و اختصاصی برای وب‌سایت‌هایی که شخصیت و هویت خودشان را دارند.
           </p>
           <b>↗</b>
         </article>
 
         <article class="service-card reveal">
-          <small>02</small>
+          <div class="service-top"><small>02 / 03</small><span>⌘</span></div>
           <div class="service-icon">⌘</div>
-          <h3 data-en="Front-end Development" data-fa="توسعه فرانت‌اند">توسعه فرانت‌اند</h3>
-          <p data-en="Turning designs into responsive pages with clean structure and interactive details."
-            data-fa="تبدیل طرح‌ها به صفحه‌هایی واکنش‌گرا با ساختار مرتب و جزئیات تعاملی.">
-            تبدیل طرح‌ها به صفحه‌هایی واکنش‌گرا با ساختار مرتب و جزئیات تعاملی.
+          <h3 data-fa="توسعه فرانت‌اند" data-en="Front-end Development" data-ar="تطوير الواجهات الأمامية" data-de="Front-end-Entwicklung">توسعه فرانت‌اند</h3>
+          <p data-fa="تبدیل طرح‌ها به صفحات واقعی، واکنش‌گرا و تعاملی با کدنویسی تمیز."
+             data-en="Turning designs into real, responsive, interactive pages with clean code."
+             data-ar="تحويل التصاميم إلى صفحات حقيقية ومتجاوبة وتفاعلية باستخدام كود منظم."
+             data-de="Designs mit sauberem Code in echte, responsive und interaktive Seiten verwandeln.">
+            تبدیل طرح‌ها به صفحات واقعی، واکنش‌گرا و تعاملی با کدنویسی تمیز.
           </p>
           <b>↗</b>
         </article>
 
         <article class="service-card reveal">
-          <small>03</small>
+          <div class="service-top"><small>03 / 03</small><span>◎</span></div>
           <div class="service-icon">◎</div>
-          <h3 data-en="UI Improvements" data-fa="بهبود رابط کاربری">بهبود رابط کاربری</h3>
-          <p data-en="Making interfaces easier to navigate, more consistent, and more enjoyable."
-            data-fa="ساده‌تر کردن مسیر استفاده از رابط‌ها و افزایش هماهنگی و کیفیت تجربه کاربر.">
-            ساده‌تر کردن مسیر استفاده از رابط‌ها و افزایش هماهنگی و کیفیت تجربه کاربر.
+          <h3 data-fa="بهبود رابط کاربری" data-en="UI Improvements" data-ar="تحسين واجهة المستخدم" data-de="UI-Optimierung">بهبود رابط کاربری</h3>
+          <p data-fa="بهینه‌سازی مسیر استفاده، خوانایی و هماهنگی اجزای یک وب‌سایت."
+             data-en="Improving navigation, readability, and consistency across a website."
+             data-ar="تحسين التنقل وسهولة القراءة وتناسق عناصر الموقع."
+             data-de="Navigation, Lesbarkeit und Konsistenz einer Website verbessern.">
+            بهینه‌سازی مسیر استفاده، خوانایی و هماهنگی اجزای یک وب‌سایت.
           </p>
           <b>↗</b>
         </article>
+      </div>
+    </section>
 
+    <!-- PROCESS -->
+    <section class="section process-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow"><i></i><span data-fa="روش کار من" data-en="HOW I WORK" data-ar="كيف أعمل" data-de="SO ARBEITE ICH">روش کار من</span></p>
+        <h2 data-fa="از فکر تا <em>واقعیت.</em>" data-en="From thought to <em>reality.</em>" data-ar="من الفكرة إلى <em>الواقع.</em>" data-de="Von der Idee zur <em>Realität.</em>">از فکر تا <em>واقعیت.</em></h2>
       </div>
 
+      <div class="process-grid">
+        <article class="process-card reveal"><span>01</span><h3 data-fa="شناخت" data-en="Discover" data-ar="الاكتشاف" data-de="Entdecken">شناخت</h3><p data-fa="درک هدف، مخاطب و ایده اصلی پروژه." data-en="Understanding the goal, audience, and core idea." data-ar="فهم الهدف والجمهور والفكرة الأساسية." data-de="Ziel, Zielgruppe und Grundidee verstehen.">درک هدف، مخاطب و ایده اصلی پروژه.</p></article>
+        <article class="process-card reveal"><span>02</span><h3 data-fa="طراحی" data-en="Design" data-ar="التصميم" data-de="Design">طراحی</h3><p data-fa="ساخت ساختار، انتخاب سبک و شکل دادن به تجربه." data-en="Creating structure, choosing a style, and shaping the experience." data-ar="بناء الهيكل واختيار الأسلوب وتشكيل التجربة." data-de="Struktur schaffen, Stil wählen und Erlebnis gestalten.">ساخت ساختار، انتخاب سبک و شکل دادن به تجربه.</p></article>
+        <article class="process-card reveal"><span>03</span><h3 data-fa="توسعه" data-en="Develop" data-ar="التطوير" data-de="Entwicklung">توسعه</h3><p data-fa="تبدیل طراحی به یک وب‌سایت واقعی و کاربردی." data-en="Turning the design into a functional website." data-ar="تحويل التصميم إلى موقع عملي وحقيقي." data-de="Das Design in eine funktionale Website verwandeln.">تبدیل طراحی به یک وب‌سایت واقعی و کاربردی.</p></article>
+        <article class="process-card reveal"><span>04</span><h3 data-fa="بهبود" data-en="Refine" data-ar="التحسين" data-de="Verfeinern">بهبود</h3><p data-fa="آزمایش، اصلاح جزئیات و بهتر کردن نتیجه." data-en="Testing, refining details, and improving the result." data-ar="الاختبار وتحسين التفاصيل والنتيجة." data-de="Testen, Details verfeinern und das Ergebnis verbessern.">آزمایش، اصلاح جزئیات و بهتر کردن نتیجه.</p></article>
+      </div>
     </section>
 
     <!-- PROJECTS -->
     <section class="section projects-section" id="projects">
-
       <div class="section-heading reveal">
-        <p class="eyebrow">
-          <i></i>
-          <span data-en="SELECTED WORK" data-fa="کارهای منتخب">کارهای منتخب</span>
-        </p>
-
-        <h2 data-en="Ideas into <em>reality.</em>"
-          data-fa="از ایده تا <em>اجرا.</em>">
-          از ایده تا <em>اجرا.</em>
-        </h2>
+        <p class="eyebrow"><i></i><span data-fa="پروژه‌های منتخب" data-en="SELECTED WORK" data-ar="أعمال مختارة" data-de="AUSGEWÄHLTE ARBEITEN">پروژه‌های منتخب</span></p>
+        <h2 data-fa="ایده‌ها در <em>عمل.</em>" data-en="Ideas in <em>action.</em>" data-ar="الأفكار في <em>الواقع.</em>" data-de="Ideen in <em>Aktion.</em>">ایده‌ها در <em>عمل.</em></h2>
       </div>
 
       <div class="project-grid">
-
         <article class="project-card reveal">
           <div class="project-art art-one">
-            <span>01</span>
+            <span class="project-number">01</span>
             <div class="mock-window">
-              <i></i><i></i><i></i>
-              <b>CREATE<br>YOUR<br>FUTURE.</b>
+              <div class="mock-bar"><i></i><i></i><i></i></div>
+              <div class="mock-content"><small>CREATE / 2026</small><b>YOUR<br>FUTURE<span>.</span></b><div class="mock-line"></div></div>
             </div>
+            <div class="art-decoration">MH</div>
           </div>
-
           <div class="project-info">
-            <div>
-              <h3 data-en="Personal Portfolio" data-fa="وب‌سایت شخصی">وب‌سایت شخصی</h3>
-              <p data-en="Brand identity / Responsive website" data-fa="هویت شخصی / وب‌سایت واکنش‌گرا">هویت شخصی / وب‌سایت واکنش‌گرا</p>
-            </div>
-            <b>↗</b>
+            <div><h3 data-fa="وب‌سایت شخصی" data-en="Personal Portfolio" data-ar="الموقع الشخصي" data-de="Persönliches Portfolio">وب‌سایت شخصی</h3><p data-fa="هویت شخصی / طراحی واکنش‌گرا" data-en="Personal identity / Responsive design" data-ar="هوية شخصية / تصميم متجاوب" data-de="Persönliche Identität / Responsives Design">هویت شخصی / طراحی واکنش‌گرا</p></div>
+            <span class="project-arrow">↗</span>
           </div>
         </article>
 
         <article class="project-card reveal">
           <div class="project-art art-two">
-            <span>02</span>
-            <div class="orbit-art">
-              FORM<br>FOLLOWS<br>FUNCTION
-            </div>
+            <span class="project-number">02</span>
+            <div class="orbit-art">FORM<br>FOLLOWS<br>FUNCTION<span>✳</span></div>
           </div>
-
           <div class="project-info">
-            <div>
-              <h3 data-en="Creative Landing Page" data-fa="صفحه فرود خلاقانه">صفحه فرود خلاقانه</h3>
-              <p data-en="Concept / UI exploration" data-fa="ایده‌پردازی / طراحی رابط">ایده‌پردازی / طراحی رابط</p>
-            </div>
-            <b>↗</b>
+            <div><h3 data-fa="صفحه فرود خلاقانه" data-en="Creative Landing Page" data-ar="صفحة هبوط إبداعية" data-de="Kreative Landingpage">صفحه فرود خلاقانه</h3><p data-fa="ایده‌پردازی / طراحی رابط" data-en="Concept / UI exploration" data-ar="فكرة / استكشاف الواجهة" data-de="Konzept / UI-Entwicklung">ایده‌پردازی / طراحی رابط</p></div>
+            <span class="project-arrow">↗</span>
           </div>
         </article>
-
       </div>
 
-      <p class="project-note reveal"
-        data-en="More work will be added as new projects take shape."
-        data-fa="با شکل گرفتن پروژه‌های جدید، نمونه‌کارهای بیشتری به این بخش اضافه می‌شود.">
-        با شکل گرفتن پروژه‌های جدید، نمونه‌کارهای بیشتری به این بخش اضافه می‌شود.
-      </p>
-
+      <p class="project-note reveal" data-fa="این بخش با پروژه‌های واقعی و تازه به‌روزرسانی خواهد شد." data-en="This section will grow with new real-world projects." data-ar="سيتم تحديث هذا القسم بمشاريع جديدة وحقيقية." data-de="Dieser Bereich wird mit neuen echten Projekten erweitert.">این بخش با پروژه‌های واقعی و تازه به‌روزرسانی خواهد شد.</p>
     </section>
 
     <!-- JOURNEY -->
     <section class="section journey-section" id="journey">
-
       <div class="section-heading reveal">
-        <p class="eyebrow">
-          <i></i>
-          <span data-en="THE PROCESS" data-fa="مسیر یادگیری">مسیر یادگیری</span>
-        </p>
-
-        <h2 data-en="Always <em>evolving.</em>"
-          data-fa="همیشه در حال <em>رشد.</em>">
-          همیشه در حال <em>رشد.</em>
-        </h2>
+        <p class="eyebrow"><i></i><span data-fa="مسیر من" data-en="MY JOURNEY" data-ar="رحلتي" data-de="MEIN WEG">مسیر من</span></p>
+        <h2 data-fa="همیشه در حال <em>رشد.</em>" data-en="Always <em>evolving.</em>" data-ar="دائماً في <em>تطور.</em>" data-de="Ständig <em>im Wandel.</em>">همیشه در حال <em>رشد.</em></h2>
       </div>
 
       <div class="journey-list">
+        <article class="journey-item reveal"><span>01</span><div><h3 data-fa="کشف کردن" data-en="Discover" data-ar="الاكتشاف" data-de="Entdecken">کشف کردن</h3><p data-fa="آشنایی با دنیای وب، کشف مسیرهای تازه و الهام گرفتن از محصولات دیجیتال." data-en="Exploring the web, discovering new paths, and finding inspiration in digital products." data-ar="استكشاف الويب واكتشاف مسارات جديدة واستلهام الأفكار من المنتجات الرقمية." data-de="Das Web erkunden, neue Wege entdecken und Inspiration in digitalen Produkten finden.">آشنایی با دنیای وب، کشف مسیرهای تازه و الهام گرفتن از محصولات دیجیتال.</p></div><small data-fa="شروع مسیر" data-en="THE BEGINNING" data-ar="البداية" data-de="DER ANFANG">شروع مسیر</small></article>
+        <article class="journey-item reveal"><span>02</span><div><h3 data-fa="یادگیری و ساختن" data-en="Learn & Build" data-ar="التعلم والبناء" data-de="Lernen & Gestalten">یادگیری و ساختن</h3><p data-fa="تمرین HTML، CSS و JavaScript با ساخت صفحه‌ها و پروژه‌های مختلف." data-en="Practicing HTML, CSS, and JavaScript by building pages and projects." data-ar="التدرب على HTML وCSS وJavaScript من خلال بناء الصفحات والمشاريع." data-de="HTML, CSS und JavaScript durch eigene Seiten und Projekte üben.">تمرین HTML، CSS و JavaScript با ساخت صفحه‌ها و پروژه‌های مختلف.</p></div><small data-fa="در حال انجام" data-en="IN PROGRESS" data-ar="قيد التنفيذ" data-de="IN ARBEIT">در حال انجام</small></article>
+        <article class="journey-item reveal"><span>03</span><div><h3 data-fa="خلق و پیشرفت" data-en="Create & Improve" data-ar="الإبداع والتطوير" data-de="Gestalten & Verbessern">خلق و پیشرفت</h3><p data-fa="پذیرفتن چالش‌های تازه، تجربه کردن و بهتر کردن هر جزئیات." data-en="Taking on new challenges, experimenting, and refining every detail." data-ar="خوض تحديات جديدة والتجربة وتحسين كل التفاصيل." data-de="Neue Herausforderungen annehmen, experimentieren und jedes Detail verbessern.">پذیرفتن چالش‌های تازه، تجربه کردن و بهتر کردن هر جزئیات.</p></div><small data-fa="فصل بعدی" data-en="NEXT CHAPTER" data-ar="الفصل القادم" data-de="NÄCHSTES KAPITEL">فصل بعدی</small></article>
+      </div>
+    </section>
 
-        <div class="journey-item reveal">
-          <span>01</span>
-          <div>
-            <h3 data-en="Discover" data-fa="کشف کردن">کشف کردن</h3>
-            <p data-en="Exploring the web, learning how things work, and finding inspiration in good digital products."
-              data-fa="آشنایی با دنیای وب، یاد گرفتن سازوکار آن و الهام گرفتن از محصولات دیجیتال خوب.">
-              آشنایی با دنیای وب، یاد گرفتن سازوکار آن و الهام گرفتن از محصولات دیجیتال خوب.
-            </p>
-          </div>
-          <small data-en="THE BEGINNING" data-fa="شروع مسیر">شروع مسیر</small>
-        </div>
-
-        <div class="journey-item reveal">
-          <span>02</span>
-          <div>
-            <h3 data-en="Learn & Build" data-fa="یادگیری و ساختن">یادگیری و ساختن</h3>
-            <p data-en="Practicing HTML, CSS, and JavaScript by building pages and small experiments."
-              data-fa="تمرین HTML، CSS و JavaScript با ساخت صفحه‌های واقعی و پروژه‌های کوچک.">
-              تمرین HTML، CSS و JavaScript با ساخت صفحه‌های واقعی و پروژه‌های کوچک.
-            </p>
-          </div>
-          <small data-en="IN PROGRESS" data-fa="در حال انجام">در حال انجام</small>
-        </div>
-
-        <div class="journey-item reveal">
-          <span>03</span>
-          <div>
-            <h3 data-en="Create & Improve" data-fa="خلق و پیشرفت">خلق و پیشرفت</h3>
-            <p data-en="Taking on new challenges, learning from feedback, and refining every detail."
-              data-fa="پذیرفتن چالش‌های تازه، یاد گرفتن از بازخوردها و بهتر کردن جزئیات.">
-              پذیرفتن چالش‌های تازه، یاد گرفتن از بازخوردها و بهتر کردن جزئیات.
-            </p>
-          </div>
-          <small data-en="NEXT CHAPTER" data-fa="فصل بعدی">فصل بعدی</small>
-        </div>
-
+    <!-- VALUES -->
+    <section class="section values-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow"><i></i><span data-fa="چیزی که برایم مهم است" data-en="WHAT MATTERS" data-ar="ما يهمني" data-de="WAS MIR WICHTIG IST">چیزی که برایم مهم است</span></p>
+        <h2 data-fa="جزئیات، تفاوت <em>می‌سازند.</em>" data-en="Details make the <em>difference.</em>" data-ar="التفاصيل تصنع <em>الفرق.</em>" data-de="Details machen den <em>Unterschied.</em>">جزئیات، تفاوت <em>می‌سازند.</em></h2>
       </div>
 
+      <div class="values-grid">
+        <div class="value-card reveal"><span>✳</span><h3 data-fa="سادگی" data-en="Simplicity" data-ar="البساطة" data-de="Einfachheit">سادگی</h3><p data-fa="طراحی خوب، پیچیدگی را به تجربه‌ای ساده تبدیل می‌کند." data-en="Good design turns complexity into a simple experience." data-ar="التصميم الجيد يحوّل التعقيد إلى تجربة بسيطة." data-de="Gutes Design macht Komplexität einfach.">طراحی خوب، پیچیدگی را به تجربه‌ای ساده تبدیل می‌کند.</p></div>
+        <div class="value-card reveal"><span>◈</span><h3 data-fa="دقت" data-en="Precision" data-ar="الدقة" data-de="Präzision">دقت</h3><p data-fa="هر فاصله، رنگ و حرکت می‌تواند بخشی از تجربه باشد." data-en="Every spacing, color, and movement can shape an experience." data-ar="كل مسافة ولون وحركة يمكن أن تشكل التجربة." data-de="Jeder Abstand, jede Farbe und Bewegung prägt das Erlebnis.">هر فاصله، رنگ و حرکت می‌تواند بخشی از تجربه باشد.</p></div>
+        <div class="value-card reveal"><span>↗</span><h3 data-fa="پیشرفت" data-en="Progress" data-ar="التقدم" data-de="Fortschritt">پیشرفت</h3><p data-fa="بهترین نسخه هر کار، نتیجه یادگیری و بهتر شدن مداوم است." data-en="The best version of any work comes from continuous learning." data-ar="أفضل نسخة من أي عمل تأتي من التعلم المستمر." data-de="Die beste Version entsteht durch kontinuierliches Lernen.">بهترین نسخه هر کار، نتیجه یادگیری و بهتر شدن مداوم است.</p></div>
+      </div>
     </section>
 
     <!-- CONTACT -->
     <section class="contact-section section" id="contact">
+      <div class="contact-orb"></div>
+      <p class="eyebrow reveal"><i></i><span data-fa="ایده‌ای در ذهن داری؟" data-en="HAVE AN IDEA?" data-ar="هل لديك فكرة؟" data-de="HAST DU EINE IDEE?">ایده‌ای در ذهن داری؟</span></p>
+      <h2 class="reveal" data-fa="بیا با هم<br><em>چیزی عالی بسازیم.</em>" data-en="Let's make<br><em>something great.</em>" data-ar="لنصنع معاً<br><em>شيئاً رائعاً.</em>" data-de="Lass uns<br><em>etwas Großartiges schaffen.</em>">بیا با هم<br><em>چیزی عالی بسازیم.</em></h2>
+      <p class="contact-description reveal" data-fa="پروژه‌ای داری، سؤالی در ذهنته یا فقط می‌خواهی سلام کنی؟ خوشحال می‌شوم پیامت را دریافت کنم." data-en="Have a project, a question, or just want to say hello? I'd be glad to hear from you." data-ar="هل لديك مشروع أو سؤال أو تريد فقط إلقاء التحية؟ يسعدني التواصل معك." data-de="Hast du ein Projekt, eine Frage oder möchtest einfach Hallo sagen? Ich freue mich auf deine Nachricht.">پروژه‌ای داری، سؤالی در ذهنته یا فقط می‌خواهی سلام کنی؟ خوشحال می‌شوم پیامت را دریافت کنم.</p>
 
-      <p class="eyebrow reveal">
-        <i></i>
-        <span data-en="HAVE AN IDEA?" data-fa="ایده‌ای در ذهن داری؟">ایده‌ای در ذهن داری؟</span>
-      </p>
+      <div class="contact-cards reveal">
+        <a class="contact-card" href="mailto:miladheidari486@gmail.com">
+          <span class="contact-icon">✉</span>
+          <small data-fa="ایمیل" data-en="EMAIL" data-ar="البريد الإلكتروني" data-de="E-MAIL">ایمیل</small>
+          <strong>miladheidari486@gmail.com</strong>
+          <b>↗</b>
+        </a>
 
-      <h2 class="reveal"
-        data-en="Let's make<br><em>something great.</em>"
-        data-fa="بیا با هم<br><em>چیزی عالی بسازیم.</em>">
-        بیا با هم<br><em>چیزی عالی بسازیم.</em>
-      </h2>
+        <a class="contact-card" href="https://t.me/Bubby1001" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon">➤</span>
+          <small data-fa="تلگرام" data-en="TELEGRAM" data-ar="تيليجرام" data-de="TELEGRAM">تلگرام</small>
+          <strong>@Bubby1001</strong>
+          <b>↗</b>
+        </a>
 
-      <p class="contact-description reveal"
-        data-en="Have a project, a question, or just want to say hello? I'd be glad to hear from you."
-        data-fa="پروژه‌ای داری، سؤالی در ذهنته یا فقط می‌خواهی سلام کنی؟ خوشحال می‌شوم پیامت را دریافت کنم.">
-        پروژه‌ای داری، سؤالی در ذهنته یا فقط می‌خواهی سلام کنی؟ خوشحال می‌شوم پیامت را دریافت کنم.
-      </p>
+        <a class="contact-card" href="tel:09383343167">
+          <span class="contact-icon">⌕</span>
+          <small data-fa="شماره تماس" data-en="PHONE" data-ar="رقم الهاتف" data-de="TELEFON">شماره تماس</small>
+          <strong dir="ltr">09383343167</strong>
+          <b>↗</b>
+        </a>
+      </div>
 
-      <a class="button button-primary reveal"
-        href="mailto:miladheidari486@gmail.com">
-        <span data-en="Get in touch" data-fa="ارتباط با من">ارتباط با من</span>
-        ↗
-      </a>
-
-      <small class="email-note">miladheidari486@gmail.com</small>
-
+      <p class="contact-footnote" data-fa="برای ارتباط سریع‌تر می‌توانی از تلگرام استفاده کنی." data-en="For a quicker conversation, feel free to reach me on Telegram." data-ar="للتواصل بشكل أسرع، يمكنك مراسلتي عبر تيليجرام." data-de="Für eine schnellere Kontaktaufnahme kannst du mir auf Telegram schreiben.">برای ارتباط سریع‌تر می‌توانی از تلگرام استفاده کنی.</p>
     </section>
 
   </main>
 
   <footer class="site-footer">
-
     <a class="footer-brand" href="#home">MH<span>.</span></a>
-
-    <p data-en="Designed & built by Milad Heidari."
-      data-fa="طراحی و توسعه توسط میلاد حیدری.">
-      طراحی و توسعه توسط میلاد حیدری.
-    </p>
-
-    <a href="#home"
-      data-en="BACK TO TOP ↑"
-      data-fa="بازگشت به بالا ↑">
-      بازگشت به بالا ↑
-    </a>
-
+    <p data-fa="طراحی و توسعه با اشتیاق توسط میلاد حیدری." data-en="Designed & built with passion by Milad Heidari." data-ar="تصميم وتطوير بشغف بواسطة ميلاد حيدري." data-de="Mit Leidenschaft gestaltet und entwickelt von Milad Heidari.">طراحی و توسعه با اشتیاق توسط میلاد حیدری.</p>
+    <a href="#home" data-fa="بازگشت به بالا ↑" data-en="BACK TO TOP ↑" data-ar="العودة للأعلى ↑" data-de="NACH OBEN ↑">بازگشت به بالا ↑</a>
     <small>© <span id="year"></span> MILAD HEIDARI</small>
-
   </footer>
 
-  <script src="script.js"></script>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>
 
+  <script src="script.js"></script>
 </body>
 </html>
