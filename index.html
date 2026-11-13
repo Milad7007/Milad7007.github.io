@@ -1,115 +1,389 @@
-<!DOCTYPE html>
+[11/13/2026 11:26 AM] 𝙈𝙄𝙇𝘼𝘿: <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="EL BICHO — Future Software Engineer. Dreaming in code, building the future." />
-  <meta name="theme-color" content="#08090b" />
-  <title>EL BICHO — Future Software Engineer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#08090b">
+    <meta name="description" content="EL BICHO — Future Software Engineer. Dreaming in code, building the future.">
+
+    <title>EL BICHO — Future Software Engineer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="cursor-glow" aria-hidden="true"></div>
 
-  <header class="site-header">
-    <a class="wordmark" href="#home" aria-label="EL BICHO home">EL<span>·</span>BICHO</a>
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="#about" data-i18n="navAbout">About</a>
-      <a href="#skills" data-i18n="navSkills">Skills</a>
-      <a href="#projects" data-i18n="navProjects">Projects</a>
-      <a href="#journey" data-i18n="navJourney">Journey</a>
-      <a href="#contact" data-i18n="navContact">Contact</a>
+<div class="noise"></div>
+<div class="cursor-glow"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+
+    <a href="#home" class="wordmark">
+        EL <span>BICHO</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#skills">SKILLS</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#journey">JOURNEY</a>
+        <a href="#contact">CONTACT</a>
     </nav>
+
     <div class="header-actions">
-      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">FA</button>
-      <a class="header-cta" href="#contact"><span data-i18n="letsTalk">LET'S TALK</span><span>↗</span></a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+        <button class="lang-toggle" id="langToggle" type="button">
+            FA
+        </button>
+
+        <a href="#contact" class="header-cta">
+            LET'S CONNECT <span>↗</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu">
+            ☰
+        </button>
+
     </div>
-  </header>
 
-  <main>
-    <section class="hero section-wrap" id="home">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="status-dot"></span><span data-i18n="available">AVAILABLE FOR NEW IDEAS</span></div>
-        <p class="hero-kicker" data-i18n="hello">HELLO, I'M</p>
-        <h1>EL<br><span class="outline-text">BICHO</span><span class="hero-period">.</span></h1>
-        <div class="hero-bottom">
-          <div>
-            <p class="role" data-i18n="role">FUTURE SOFTWARE ENGINEER</p>
-            <p class="tagline" data-i18n="tagline">Dreaming in code, building the future.</p>
-          </div>
-          <a class="round-link" href="#about" aria-label="Explore"><span>↓</span></a>
+</header>
+
+
+<main>
+
+<!-- HERO -->
+<section class="hero section-wrap" id="home">
+
+    <div class="hero-copy">
+
+        <div class="eyebrow">
+            <span class="status-dot"></span>
+            AVAILABLE FOR NEW IDEAS
         </div>
-      </div>
 
-      <div class="hero-art" aria-label="Abstract metallic 3D-inspired artwork">
+        <p class="hero-kicker">THE NEXT GENERATION OF CODE</p>
+
+        <h1>
+            EL<br>
+            <span class="outline-text">BICHO</span><span class="hero-period">.</span>
+        </h1>
+
+        <div class="hero-bottom">
+
+            <div>
+                <p class="role">FUTURE SOFTWARE ENGINEER</p>
+                <p class="tagline">Dreaming in code, building the future.</p>
+            </div>
+
+            <a href="#about" class="round-link" aria-label="Explore">
+                ↓
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-art">
+
+        <div class="art-label label-top">DIGITAL / FUTURE / 001</div>
+
         <div class="art-orbit orbit-one"></div>
         <div class="art-orbit orbit-two"></div>
         <div class="art-ring"></div>
-        <div class="art-core"><span>EB</span></div>
+
+        <div class="art-core">
+            <span>EB</span>
+        </div>
+
         <div class="art-shard shard-one"></div>
         <div class="art-shard shard-two"></div>
         <div class="art-shard shard-three"></div>
-        <div class="art-label label-top">FIG. 001 — THE BEGINNING</div>
-        <div class="art-label label-bottom">DESIGNED TO EVOLVE <span>✳</span></div>
-      </div>
-      <div class="hero-index"><span>01 / 05</span><span class="index-line"></span><span>SCROLL TO EXPLORE</span></div>
-    </section>
 
-    <section class="intro section-wrap" id="about">
-      <div class="section-heading"><span class="section-number">01</span><span data-i18n="aboutLabel">A LITTLE ABOUT ME</span></div>
-      <div class="intro-grid">
-        <h2 data-i18n="aboutTitle">Not there<br>yet. <em>On my way.</em></h2>
-        <div class="intro-text">
-          <p data-i18n="aboutText">I'm EL BICHO — an aspiring software engineer with a serious curiosity for technology, design, and the endless possibilities of the web. I'm learning, experimenting, and turning ideas into something real, one line of code at a time.</p>
-          <a class="text-link" href="#journey"><span data-i18n="moreJourney">MORE ABOUT MY JOURNEY</span> <b>↗</b></a>
+        <div class="art-label label-bottom">
+            FIG. 001 <span>EL BICHO</span>
         </div>
-      </div>
-    </section>
 
-    <section class="skills section-wrap" id="skills">
-      <div class="section-heading"><span class="section-number">02</span><span data-i18n="skillsLabel">WHAT I'M EXPLORING</span></div>
-      <div class="section-title-row"><h2 data-i18n="skillsTitle">Curiosity in<br><em>progress.</em></h2><p data-i18n="skillsNote">A growing toolkit. These are the areas I'm exploring as I build my foundation.</p></div>
-      <div class="skill-list">
-        <div class="skill-item"><span>01</span><h3>HTML & CSS</h3><p data-i18n="skillOne">The building blocks of the web</p><b>↗</b></div>
-        <div class="skill-item"><span>02</span><h3>JavaScript</h3><p data-i18n="skillTwo">Bringing interfaces to life</p><b>↗</b></div>
-        <div class="skill-item"><span>03</span><h3>UI / UX DESIGN</h3><p data-i18n="skillThree">Thoughtful digital experiences</p><b>↗</b></div>
-        <div class="skill-item"><span>04</span><h3>CREATIVE CODE</h3><p data-i18n="skillFour">Experimenting beyond the ordinary</p><b>↗</b></div>
-      </div>
-    </section>
+    </div>
 
-    <section class="projects section-wrap" id="projects">
-      <div class="section-heading"><span class="section-number">03</span><span data-i18n="projectsLabel">SELECTED WORK</span></div>
-      <div class="section-title-row"><h2 data-i18n="projectsTitle">Ideas into<br><em>experiments.</em></h2><p data-i18n="projectsNote">This space will grow with every project I create. The best is still ahead.</p></div>
-      <div class="project-grid">
-        <article class="project-card project-large"><div class="project-visual visual-one"><span class="visual-word">01</span><div class="mini-window"><i></i><i></i><i></i><span>EL_BICHO.exe</span><strong>BUILD<br>THE<br>FUTURE<span>.</span></strong></div></div><div class="project-meta"><div><span>PROJECT 001</span><h3 data-i18n="projectOne">Personal Portfolio</h3></div><span class="project-status" data-i18n="comingSoon">IN PROGRESS</span></div></article>
-        <article class="project-card"><div class="project-visual visual-two"><div class="sphere"></div><span class="visual-caption">FORM / FUNCTION</span></div><div class="project-meta"><div><span>PROJECT 002</span><h3 data-i18n="projectTwo">Next experiment</h3></div><span class="project-status">SOON</span></div></article>
-      </div>
-    </section>
+    <div class="hero-index">
+        <span>01</span>
+        <div class="index-line"></div>
+        <span>INTRODUCTION</span>
+    </div>
 
-    <section class="journey section-wrap" id="journey">
-      <div class="section-heading"><span class="section-number">04</span><span data-i18n="journeyLabel">THE ROAD AHEAD</span></div>
-      <div class="journey-content"><h2 data-i18n="journeyTitle">Every expert<br>was once a <em>beginner.</em></h2><p data-i18n="journeyText">I'm at the start of the journey, and that's what makes it exciting. Every challenge is a chance to learn. Every project is a step forward. This is where my story gets written.</p><div class="journey-stamp">STAY<br>CURIOUS<span>✳</span></div></div>
-    </section>
+</section>
 
-    <section class="contact section-wrap" id="contact">
-      <div class="section-heading"><span class="section-number">05</span><span data-i18n="contactLabel">HAVE AN IDEA?</span></div>
-      <h2 data-i18n="contactTitle">Let's make<br>something <em>matter.</em></h2>
-      <a class="contact-mail" href="mailto:hello@elbicho.dev">hello@elbicho.dev <span>↗</span></a>
-      <p class="contact-hint" data-i18n="contactHint">Replace this email with your own when you're ready to publish.</p>
-    </section>
-  </main>
 
-  <footer class="site-footer">
-    <a class="wordmark" href="#home">EL<span>·</span>BICHO</a>
-    <span data-i18n="footerLine">DREAMING IN CODE, BUILDING THE FUTURE.</span>
-    <a href="#home" class="back-top">BACK TO TOP ↑</a>
-    <small>© <span id="year"></span> EL BICHO</small>
-  </footer>
-  <script src="script.js"></script>
+<!-- ABOUT -->
+<section class="intro section-wrap" id="about">
+
+    <div class="section-heading">
+        <span class="section-number">01 /</span>
+        <span>ABOUT ME</span>
+    </div>
+
+    <div class="intro-grid">
+
+        <h2>
+            Not just<br>
+            a dreamer.<br>
+            <em>A builder.</em>
+        </h2>
+
+        <div class="intro-text">
+
+            <p>
+                I'm EL BICHO, an aspiring software engineer with a passion
+                for technology, creativity and the endless possibilities of code.
+            </p>
+
+            <p>
+                My journey is just beginning. Every line of code is another
+                step toward building something meaningful, powerful and unique.
+            </p>
+
+            <a href="#journey" class="text-link">
+                DISCOVER MY JOURNEY <b>↗</b>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+<section class="skills section-wrap" id="skills">
+
+    <div class="section-heading">
+        <span class="section-number">02 /</span>
+        <span>MY SKILLS</span>
+    </div>
+
+    <div class="section-title-row">
+
+        <h2>
+            Learning.<br>
+            <em>Creating.</em>
+        </h2>
+
+        <p>
+            Building my foundation, exploring new technologies
+            and turning curiosity into practical skills.
+        </p>
+
+    </div>
+
+    <div class="skill-list">
+
+        <div class="skill-item">
+            <span>01</span>
+            <h3>HTML</h3>
+            <p>Building the structure of the web.</p>
+            <b>↗</b>
+        </div>
+
+        <div class="skill-item">
+            <span>02</span>
+            <h3>CSS</h3>
+            <p>Designing beautiful digital experiences.</p>
+            <b>↗</b>
+        </div>
+
+        <div class="skill-item">
+            <span>03</span>
+            <h3>JavaScript</h3>
+            <p>Bringing ideas and interfaces to life.</p>
+            <b>↗</b>
+        </div>
+
+        <div class="skill-item">
+            <span>04</span>
+            <h3>Creative Thinking</h3>
+            <p>Solving problems with imagination.</p>
+            <b>↗</b>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+<section class="projects section-wrap" id="projects">
+
+    <div class="section-heading">
+        <span class="section-number">03 /</span>
+        <span>SELECTED PROJECTS</span>
+    </div>
+
+    <div class="section-title-row">
+
+        <h2>
+            Ideas into<br>
+            <em>reality.</em>
+        </h2>
+
+        <p>
+            A growing collection of experiments, concepts
+            and projects from my learning journey.
+        </p>
+
+    </div>
+
+    <div class="project-grid">
+
+        <article class="project-card">
+
+            <div class="project-visual visual-one">
+
+                <span class="visual-word">PROJECT / 001</span>
+
+                <div class="mini-window">
+                    <i></i><i></i><i></i>
+                    <span>EL BICHO / WEB</span>
+
+                    <strong>
+                        EL<br>
+                        <span>BICHO.</span>
+                    </strong>
+                </div>
+
+                <span class="visual-caption">DIGITAL IDENTITY</span>
+
+            </div>
+
+            <div class="project-meta">
+                <div>
+                    <span>01 / WEB DESIGN</span>
+                    <h3>EL BICHO — Personal Website</h3>
+                </div>
+
+                <span class="project-status">IN PROGRESS</span>
+            </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+            <div class="project-visual visual-two">
+
+                <span class="visual-word">PROJECT / 002</span>
+
+                <div class="sphere"></div>
+
+                <span class="visual-caption">EXPERIMENT / 3D</span>
+
+            </div>
+
+            <div class="project-meta">
+                <div>
+                    <span>02 / EXPERIMENT</span>
+                    <h3>Digital Experiments</h3>
+                </div>
+
+                <span class="project-status">EXPLORING</span>
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- JOURNEY -->
+<section class="journey section-wrap" id="journey">
+
+    <div class="section-heading">
+        <span class="section-number">04 /</span>
+        <span>MY JOURNEY</span>
+    </div>
+
+    <div class="journey-content">
+
+        <h2>
+            The future<br>
+            is <em>being built.</em>
+        </h2>
+
+        <p>
+            Every expert was once a beginner.
+            I'm learning, experimenting and improving every day.
+            My goal is to become a software engineer who creates
+            technology that makes a difference.
+        </p>
+
+        <div class="journey-stamp">
+            FUTURE<br>
+            ENGINEER
+            <span>↗</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact section-wrap" id="contact">
+
+    <div class="section-heading">
+        <span class="section-number">05 /</span>
+        <span>CONTACT</span>
+    </div>
+[11/13/2026 11:26 AM] 𝙈𝙄𝙇𝘼𝘿: <h2>
+        Let's create<br>
+        <em>something.</em>
+    </h2>
+
+    <a href="mailto:hello@elbicho.dev" class="contact-mail">
+        hello@elbicho.dev <span>↗</span>
+    </a>
+
+    <p class="contact-hint">
+        REPLACE THIS EMAIL WITH YOUR REAL CONTACT ADDRESS BEFORE PUBLISHING.
+    </p>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+    <a href="#home" class="wordmark">
+        EL <span>BICHO</span>
+    </a>
+
+    <span>DESIGNED WITH CURIOSITY. BUILT WITH CODE.</span>
+
+    <small>
+        © <span id="year">2026</span> EL BICHO
+    </small>
+
+    <a href="#home" class="back-top">
+        BACK TO TOP ↑
+    </a>
+
+</footer>
+
+
+<!-- Main JavaScript -->
+<script src="script.js"></script>
+
 </body>
 </html>
