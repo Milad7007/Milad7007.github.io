@@ -1,1 +1,895 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="theme-color" content="#050506">
+    <meta name="description" content="Milad Heidari — Creative Web Designer & Digital Experience Designer">
+
+    <title>Milad Heidari | Digital Experience Designer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="loader-content">
+            <div class="loader-symbol">M<span>.</span></div>
+            <div class="loader-line">
+                <span></span>
+            </div>
+            <p>CREATING DIGITAL EXPERIENCES</p>
+        </div>
+    </div>
+
+    <!-- BACKGROUND -->
+    <div class="background-system">
+        <div class="ambient ambient-one"></div>
+        <div class="ambient ambient-two"></div>
+        <div class="ambient ambient-three"></div>
+        <div class="grid-background"></div>
+        <canvas id="particles"></canvas>
+        <div class="noise-overlay"></div>
+    </div>
+
+    <!-- SCROLL PROGRESS -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+
+            <a href="#home" class="logo">
+                <span class="logo-mark">M<span>.</span></span>
+                <span class="logo-text">MILAD<span>HEIDARI</span></span>
+            </a>
+
+            <nav class="navigation" id="navigation">
+                <a href="#home" class="nav-link active" data-fa="خانه" data-en="Home" data-ar="الرئيسية" data-de="Startseite">خانه</a>
+                <a href="#about" class="nav-link" data-fa="درباره من" data-en="About" data-ar="من أنا" data-de="Über mich">درباره من</a>
+                <a href="#services" class="nav-link" data-fa="خدمات" data-en="Services" data-ar="الخدمات" data-de="Leistungen">خدمات</a>
+                <a href="#projects" class="nav-link" data-fa="پروژه‌ها" data-en="Projects" data-ar="المشاريع" data-de="Projekte">پروژه‌ها</a>
+                <a href="#journey" class="nav-link" data-fa="مسیر من" data-en="Journey" data-ar="رحلتي" data-de="Mein Weg">مسیر من</a>
+                <a href="#contact" class="nav-link" data-fa="ارتباط" data-en="Contact" data-ar="تواصل" data-de="Kontakt">ارتباط</a>
+            </nav>
+
+            <div class="header-actions">
+
+                <div class="language-wrapper">
+                    <button class="language-button" id="languageButton" aria-label="Change language">
+                        <span class="language-icon">◎</span>
+                        <span id="languageLabel">فارسی</span>
+                        <span class="language-arrow">⌄</span>
+                    </button>
+
+                    <div class="language-menu" id="languageMenu">
+                        <button data-lang="fa">فارسی</button>
+                        <button data-lang="en">English</button>
+                        <button data-lang="ar">عربي</button>
+                        <button data-lang="de">Deutsch</button>
+                    </div>
+                </div>
+
+                <a href="#contact" class="header-cta">
+                    <span data-fa="شروع همکاری" data-en="Let's Talk" data-ar="لنتحدث" data-de="Lass uns reden">شروع همکاری</span>
+                    <span class="cta-arrow">↗</span>
+                </a>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero section" id="home">
+
+            <div class="hero-orbit orbit-large"></div>
+            <div class="hero-orbit orbit-small"></div>
+
+            <div class="container hero-container">
+
+                <div class="hero-content">
+
+                    <div class="hero-status reveal">
+                        <span class="status-dot"></span>
+                        <span data-fa="آماده خلق تجربه‌های جدید" data-en="AVAILABLE FOR NEW EXPERIENCES" data-ar="متاح لمشاريع جديدة" data-de="OFFEN FÜR NEUE PROJEKTE">
+                            آماده خلق تجربه‌های جدید
+                        </span>
+                    </div>
+
+                    <div class="hero-eyebrow reveal">
+                        <span class="eyebrow-line"></span>
+                        <span data-fa="طراح وب و تجربه‌های دیجیتال" data-en="WEB DESIGNER & DIGITAL CREATOR" data-ar="مصمم مواقع وتجارب رقمية" data-de="WEB DESIGNER & DIGITAL CREATOR">
+                            طراح وب و تجربه‌های دیجیتال
+                        </span>
+                    </div>
+
+                    <h1 class="hero-title reveal">
+                        <span data-fa="میلاد حیدری" data-en="MILAD HEIDARI" data-ar="ميلاد حيدري" data-de="MILAD HEIDARI">
+                            میلاد حیدری
+                        </span>
+
+                        <span class="hero-title-accent">
+                            <span data-fa="مهندس طراحی و توسعه وب" data-en="WEB DESIGN & DEVELOPMENT ENGINEER" data-ar="مهندس تصميم وتطوير الويب" data-de="WEB DESIGN- UND ENTWICKLUNGSINGENIEUR">
+                                مهندس طراحی و توسعه وب
+                            </span>
+                        </span>
+                    </h1>
+
+                    <p class="hero-description reveal"
+                       data-fa="من میلاد حیدری هستم؛ علاقه‌مند به طراحی وب، زیبایی‌شناسی دیجیتال و ساخت تجربه‌هایی که در ذهن می‌مانند."
+                       data-en="I'm Milad Heidari — passionate about web design, digital aesthetics, and creating experiences that leave a lasting impression."
+                       data-ar="أنا ميلاد حيدري، شغوف بتصميم المواقع والجماليات الرقمية وصناعة تجارب تبقى في الذاكرة."
+                       data-de="Ich bin Milad Heidari – begeistert von Webdesign, digitaler Ästhetik und Erlebnissen, die im Gedächtnis bleiben.">
+                        من میلاد حیدری هستم؛ علاقه‌مند به طراحی وب، زیبایی‌شناسی دیجیتال و ساخت تجربه‌هایی که در ذهن می‌مانند.
+                    </p>
+
+                    <div class="hero-buttons reveal">
+                        <a href="#projects" class="button button-primary">
+                            <span data-fa="مشاهده آثار من" data-en="Explore My Work" data-ar="اكتشف أعمالي" data-de="Meine Arbeiten ansehen">
+                                مشاهده آثار من
+                            </span>
+                            <span class="button-icon">↗</span>
+                        </a>
+
+                        <a href="#about" class="button button-outline">
+                            <span data-fa="بیشتر بشناس" data-en="Discover More" data-ar="اكتشف المزيد" data-de="Mehr erfahren">
+                                بیشتر بشناس
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="hero-social reveal">
+                        <span data-fa="دنبال کن" data-en="FOLLOW ME" data-ar="تابعني" data-de="FOLGE MIR">دنبال کن</span>
+                        <div class="social-line"></div>
+                        <a href="https://t.me/Bubby1001" target="_blank" rel="noopener noreferrer">TG</a>
+                        <a href="mailto:miladheidari486@gmail.com">EM</a>
+                    </div>
+
+                </div>
+
+                <!-- HERO VISUAL -->
+                <div class="hero-visual reveal">
+
+                    <div class="visual-glow"></div>
+                    <div class="visual-top-label">
+                        <span>01 / 04</span>
+                        <span>CREATIVE MINDSET</span>
+                    </div>
+
+                    <div class="visual-main">
+
+                        <div class="visual-ring ring-one"></div>
+                        <div class="visual-ring ring-two"></div>
+                        <div class="visual-ring ring-three"></div>
+
+                        <div class="visual-center">
+                            <div class="center-symbol">M<span>.</span></div>
+                            <div class="center-caption">MILAD HEIDARI</div>
+                        </div>
+
+                        <div class="floating-card card-code">
+                            <span class="floating-icon">&lt;/&gt;</span>
+                            <div>
+                                <strong>CREATIVE</strong>
+                                <small>DEVELOPMENT</small>
+                            </div>
+                        </div>
+
+                        <div class="floating-card card-design">
+                            <span class="floating-icon">✳</span>
+                            <div>
+                                <strong>VISUAL</strong>
+                                <small>EXPERIENCE</small>
+                            </div>
+                        </div>
+
+                        <div class="floating-orb"></div>
+
+                    </div>
+
+                    <div class="visual-bottom">
+                        <span>DESIGN</span>
+                        <span class="visual-bottom-line"></span>
+                        <span>INNOVATION</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="hero-bottom container">
+                <div class="hero-scroll">
+                    <span class="scroll-mouse"></span>
+                    <span data-fa="برای کشف بیشتر اسکرول کن" data-en="SCROLL TO DISCOVER" data-ar="مرر لاكتشاف المزيد" data-de="SCROLLE ZUM ENTDECKEN">
+                        برای کشف بیشتر اسکرول کن
+                    </span>
+                </div>
+
+                <div class="hero-index">MH — 2026</div>
+            </div>
+
+        </section>
+
+
+        <!-- MARQUEE -->
+        <section class="marquee-section">
+            <div class="marquee-track">
+                <div class="marquee-content">
+                    <span>CREATIVE DESIGN</span><i>✳</i>
+                    <span>DIGITAL EXPERIENCE</span><i>✳</i>
+                    <span>WEB DEVELOPMENT</span><i>✳</i>
+                    <span>CREATIVE DESIGN</span><i>✳</i>
+                    <span>DIGITAL EXPERIENCE</span><i>✳</i>
+                    <span>WEB DEVELOPMENT</span><i>✳</i>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ABOUT -->
+        <section class="about section" id="about">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <div class="section-kicker">
+                        <span>01</span>
+                        <span data-fa="درباره من" data-en="ABOUT ME" data-ar="من أنا" data-de="ÜBER MICH">درباره من</span>
+                    </div>
+
+                    <h2 data-fa="ایده‌ها را به <em>تجربه</em> تبدیل می‌کنم."
+                        data-en="Turning ideas into <em>experiences.</em>"
+                        data-ar="أحوّل الأفكار إلى <em>تجارب.</em>"
+                        data-de="Ich verwandle Ideen in <em>Erlebnisse.</em>">
+                        ایده‌ها را به <em>تجربه</em> تبدیل می‌کنم.
+                    </h2>
+                </div>
+
+                <div class="about-grid">
+
+                    <div class="about-main reveal">
+
+                        <span class="about-big-number">MH.</span>
+
+                        <div class="about-text">
+                            <p class="about-lead"
+                               data-fa="طراحی برای من فقط چیدن رنگ‌ها و عناصر کنار هم نیست؛ هر جزئیات باید هدفی داشته باشد."
+                               data-en="Design is more than arranging colors and elements. Every detail should have a purpose."
+                               data-ar="التصميم بالنسبة لي ليس مجرد تنسيق الألوان والعناصر، بل يجب أن يكون لكل تفصيل هدف."
+                               data-de="Design bedeutet für mich mehr als Farben und Elemente anzuordnen. Jedes Detail braucht einen Zweck.">
+                                طراحی برای من فقط چیدن رنگ‌ها و عناصر کنار هم نیست؛ هر جزئیات باید هدفی داشته باشد.
+                            </p>
+
+                            <p data-fa="من به دنبال ساخت وب‌سایت‌هایی هستم که علاوه بر ظاهر زیبا، حس متفاوتی ایجاد کنند؛ سریع، کاربردی، مدرن و ماندگار."
+                               data-en="I aim to create websites that go beyond good looks — fast, useful, modern, and memorable."
+                               data-ar="أسعى إلى إنشاء مواقع تتجاوز المظهر الجميل، لتكون سريعة وعملية وعصرية ولا تُنسى."
+                               data-de="Ich möchte Websites gestalten, die mehr als gut aussehen – schnell, nützlich, modern und unvergesslich.">
+                                من به دنبال ساخت وب‌سایت‌هایی هستم که علاوه بر ظاهر زیبا، حس متفاوتی ایجاد کنند؛ سریع، کاربردی، مدرن و ماندگار.
+                            </p>
+
+                            <a href="#contact" class="text-link">
+                                <span data-fa="بیا چیزی متفاوت بسازیم" data-en="LET'S BUILD SOMETHING DIFFERENT" data-ar="لنصنع شيئاً مختلفاً" data-de="LASS UNS ETWAS BESONDERES SCHAFFEN">
+                                    بیا چیزی متفاوت بسازیم
+                                </span>
+                                <span>↗</span>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="about-side reveal">
+                             <div class="about-side reveal">
+
+                        <div class="about-stat">
+                            <span class="stat-number">01<span>+</span></span>
+                            <span class="stat-label" data-fa="ذهن خلاق" data-en="CREATIVE MIND" data-ar="عقل مبدع" data-de="KREATIVER GEIST">ذهن خلاق</span>
+                        </div>
+
+                        <div class="about-stat">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label" data-fa="ایده‌های تازه" data-en="FRESH IDEAS" data-ar="أفكار جديدة" data-de="NEUE IDEEN">ایده‌های تازه</span>
+                        </div>
+
+                        <div class="about-stat">
+                            <span class="stat-number">100<span>%</span></span>
+                            <span class="stat-label" data-fa="توجه به جزئیات" data-en="DETAIL FOCUSED" data-ar="اهتمام بالتفاصيل" data-de="DETAILORIENTIERT">توجه به جزئیات</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SKILLS -->
+        <section class="skills section" id="skills">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <div class="section-kicker">
+                        <span>02</span>
+                        <span data-fa="توانایی‌ها" data-en="MY EXPERTISE" data-ar="مهاراتي" data-de="MEINE FÄHIGKEITEN">توانایی‌ها</span>
+                    </div>
+
+                    <h2 data-fa="ترکیب خلاقیت و <em>تکنولوژی.</em>"
+                        data-en="Where creativity meets <em>technology.</em>"
+                        data-ar="حيث يلتقي الإبداع <em>بالتكنولوجيا.</em>"
+                        data-de="Wo Kreativität auf <em>Technologie trifft.</em>">
+                        ترکیب خلاقیت و <em>تکنولوژی.</em>
+                    </h2>
+                </div>
+
+
+                <div class="skills-layout">
+
+                    <div class="skills-intro reveal">
+                        <span class="giant-outline">SKILLS</span><p data-fa="برای ساخت یک تجربه دیجیتال عالی، باید بین طراحی، عملکرد و احساس تعادل ایجاد کرد."
+                           data-en="Creating an excellent digital experience requires balance between design, performance, and emotion."
+                           data-ar="يتطلب إنشاء تجربة رقمية ممتازة التوازن بين التصميم والأداء والشعور."
+                           data-de="Ein großartiges digitales Erlebnis braucht ein Gleichgewicht zwischen Design, Leistung und Emotion.">
+                            برای ساخت یک تجربه دیجیتال عالی، باید بین طراحی، عملکرد و احساس تعادل ایجاد کرد.
+                        </p>
+                    </div>
+
+
+                    <div class="skills-list reveal">
+
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>HTML / CSS</span>
+                                <span>WEB STRUCTURE</span>
+                            </div>
+                            <div class="skill-track">
+                                <span style="--skill-width: 90%"></span>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>JAVASCRIPT</span>
+                                <span>INTERACTION</span>
+                            </div>
+                            <div class="skill-track">
+                                <span style="--skill-width: 75%"></span>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>UI / UX DESIGN</span>
+                                <span>USER EXPERIENCE</span>
+                            </div>
+                            <div class="skill-track">
+                                <span style="--skill-width: 85%"></span>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>RESPONSIVE DESIGN</span>
+                                <span>MULTI DEVICE</span>
+                            </div>
+                            <div class="skill-track">
+                                <span style="--skill-width: 88%"></span>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>CREATIVE THINKING</span>
+                                <span>IDEA GENERATION</span>
+                            </div>
+                            <div class="skill-track">
+                                <span style="--skill-width: 95%"></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SERVICES -->
+        <section class="services section" id="services">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <div class="section-kicker">
+                        <span>03</span>
+                        <span data-fa="چه کاری انجام می‌دهم؟" data-en="WHAT I DO" data-ar="ماذا أقدم؟" data-de="WAS ICH MACHE">چه کاری انجام می‌دهم؟</span>
+                    </div>
+
+                    <h2 data-fa="از ایده تا یک <em>اثر دیجیتال.</em>"
+                        data-en="From idea to a <em>digital masterpiece.</em>"
+                        data-ar="من الفكرة إلى <em>عمل رقمي مميز.</em>"
+                        data-de="Von der Idee zum <em>digitalen Meisterwerk.</em>">
+                        از ایده تا یک <em>اثر دیجیتال.</em>
+                    </h2>
+                </div>
+
+
+                <div class="services-grid">
+
+                    <article class="service-card reveal">
+                        <div class="service-top">
+                            <span class="service-number">01 / 04</span>
+                            <span class="service-icon">✳</span>
+                        </div>
+
+                        <h3 data-fa="طراحی وب‌سایت" data-en="Web Design" data-ar="تصميم المواقع" data-de="Webdesign">طراحی وب‌سایت</h3>
+
+                        <p data-fa="خلق رابط‌های مدرن و خاص با تمرکز بر زیبایی، هویت بصری و تجربه کاربری."
+                           data-en="Creating modern and distinctive interfaces focused on aesthetics, identity, and user experience."
+                           data-ar="إنشاء واجهات عصرية ومميزة تركز على الجمال والهوية وتجربة المستخدم."
+                           data-de="Moderne und unverwechselbare Oberflächen mit Fokus auf Ästhetik, Identität und Benutzererlebnis.">
+                            خلق رابط‌های مدرن و خاص با تمرکز بر زیبایی، هویت بصری و تجربه کاربری.
+                        </p>
+
+                        <div class="service-footer">
+                            <span>DESIGN / UI</span>
+                            <span>↗</span>
+                        </div>
+                    </article>
+
+
+                    <article class="service-card reveal">
+                        <div class="service-top">
+                            <span class="service-number">02 / 04</span>
+                            <span class="service-icon">⌘</span>
+                        </div>
+
+                        <h3 data-fa="توسعه فرانت‌اند" data-en="Frontend Development" data-ar="تطوير الواجهات" data-de="Frontend-Entwicklung">توسعه فرانت‌اند</h3>
+
+                        <p data-fa="تبدیل طرح‌های گرافیکی به صفحات سریع، واکنش‌گرا و تعاملی."
+                           data-en="Transforming visual concepts into fast, responsive, and interactive web interfaces."
+                           data-ar="تحويل التصاميم المرئية إلى واجهات ويب سريعة ومتجاوبة وتفاعلية."
+                           data-de="Visuelle Konzepte in schnelle, responsive und interaktive Weboberflächen verwandeln.">
+                            تبدیل طرح‌های گرافیکی به صفحات سریع، واکنش‌گرا و تعاملی.
+                        </p>
+
+                        <div class="service-footer">
+                            <span>CODE / WEB</span>
+                            <span>↗</span>
+                        </div>
+                    </article>
+
+
+                    <article class="service-card reveal">
+                        <div class="service-top">
+                            <span class="service-number">03 / 04</span>
+                            <span class="service-icon">◈</span>
+                        </div>
+
+                        <h3 data-fa="طراحی تجربه کاربری" data-en="UI / UX Experience" data-ar="تجربة المستخدم" data-de="UI / UX-Erlebnis">طراحی تجربه کاربری</h3>
+
+                        <p data-fa="ساخت مسیرهای ساده و هوشمند برای ارتباط بهتر کاربران با محصولات دیجیتال."
+                           data-en="Designing clear and intuitive journeys that connect users with digital products."
+                           data-ar="تصميم مسارات بسيطة وذكية لتحسين تفاعل المستخدمين مع المنتجات الرقمية."
+                           data-de="Klare und intuitive Abläufe gestalten, die Nutzer mit digitalen Produkten verbinden.">
+                            ساخت مسیرهای ساده و هوشمند برای ارتباط بهتر کاربران با محصولات دیجیتال.
+                        </p>
+
+                        <div class="service-footer">
+                            <span>UX / INTERFACE</span>
+                            <span>↗</span>
+                        </div>
+                    </article>
+
+
+                    <article class="service-card reveal">
+                        <div class="service-top">
+                            <span class="service-number">04 / 04</span>
+                            <span class="service-icon">✧</span>
+                        </div>
+
+                        <h3 data-fa="هویت بصری دیجیتال" data-en="Digital Identity" data-ar="الهوية الرقمية" data-de="Digitale Identität">هویت بصری دیجیتال</h3><p data-fa="ایجاد ظاهر منسجم و متمایز برای برندها و پروژه‌های آنلاین."
+                           data-en="Building consistent and recognizable visual identities for brands and online projects."
+                           data-ar="إنشاء هويات بصرية متناسقة ومميزة للعلامات التجارية والمشاريع الرقمية."
+                           data-de="Konsistente und wiedererkennbare visuelle Identitäten für Marken und Online-Projekte entwickeln.">
+                            ایجاد ظاهر منسجم و متمایز برای برندها و پروژه‌های آنلاین.
+                        </p>
+
+                        <div class="service-footer">
+                            <span>BRANDING / VISUAL</span>
+                            <span>↗</span>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURED PROJECT -->
+        <section class="featured-project section" id="projects">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <div class="section-kicker">
+                        <span>04</span>
+                        <span data-fa="منتخب پروژه‌ها" data-en="SELECTED WORK" data-ar="أعمال مختارة" data-de="AUSGEWÄHLTE ARBEITEN">منتخب پروژه‌ها</span>
+                    </div>
+
+                    <h2 data-fa="ایده‌هایی برای <em>متفاوت بودن.</em>"
+                        data-en="Ideas made to <em>stand apart.</em>"
+                        data-ar="أفكار صُممت <em>لتكون مختلفة.</em>"
+                        data-de="Ideen, die <em>herausstechen.</em>">
+                        ایده‌هایی برای <em>متفاوت بودن.</em>
+                    </h2>
+                </div>
+
+
+                <div class="projects-grid">
+
+                    <article class="project-card project-large reveal">
+
+                        <div class="project-visual project-visual-one">
+                            <div class="project-window">
+                                <div class="window-bar">
+                                    <span></span><span></span><span></span>
+                                </div>
+
+                                <div class="mockup-one">
+                                    <div class="mockup-brand">NOVA<span>.</span></div>
+                                    <div class="mockup-title">BEYOND<br>THE LIMITS.</div>
+                                    <div class="mockup-shape"></div>
+                                    <div class="mockup-button"></div>
+                                </div>
+                            </div>
+
+                            <span class="project-tag">01 — CONCEPT</span>
+                        </div>
+
+                        <div class="project-details">
+                            <div>
+                                <span class="project-category" data-fa="مفهوم طراحی / رابط کاربری" data-en="DESIGN CONCEPT / UI" data-ar="مفهوم تصميم / واجهة" data-de="DESIGNKONZEPT / UI">مفهوم طراحی / رابط کاربری</span>
+                                <h3>NOVA DIGITAL</h3>
+                            </div>
+
+                            <span class="project-arrow">↗</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="project-card reveal">
+
+                        <div class="project-visual project-visual-two">
+                            <div class="mockup-creative">
+                                <span>FORM</span>
+                                <div class="creative-circle"></div>
+                                <strong>CREATE<br>YOUR<br>WORLD.</strong>
+                            </div>
+
+                            <span class="project-tag">02 — CONCEPT</span>
+                        </div>
+
+                        <div class="project-details">
+                            <div>
+                                <span class="project-category" data-fa="طراحی خلاقانه" data-en="CREATIVE DESIGN" data-ar="تصميم إبداعي" data-de="KREATIVES DESIGN">طراحی خلاقانه</span>
+                                <h3>FORM STUDIO</h3>
+                            </div>
+
+                            <span class="project-arrow">↗</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="project-card reveal">
+
+                        <div class="project-visual project-visual-three">
+                            <div class="mockup-dark">
+                                <div class="dark-orbit"></div>
+                                <span class="dark-title">AETHER</span>
+                                <span class="dark-subtitle">DIGITAL UNIVERSE</span>
+                                <span class="dark-number">003</span>
+                            </div>
+
+                            <span class="project-tag">03 — CONCEPT</span>
+                        </div>
+
+                        <div class="project-details">
+                            <div>
+                                <span class="project-category" data-fa="کانسپت دیجیتال" data-en="DIGITAL CONCEPT" data-ar="مفهوم رقمي" data-de="DIGITALES KONZEPT">کانسپت دیجیتال</span>
+                                <h3>AETHER WORLD</h3>
+                            </div>
+
+                            <span class="project-arrow">↗</span>
+                        </div>
+
+                    </article>
+
+                </div>
+
+                <p class="projects-note"
+                   data-fa="نمونه‌های بالا کانسپت‌های نمایشی هستند و برای نمایش سبک بصری و توانایی طراحی استفاده شده‌اند."
+                   data-en="The examples above are visual concepts created to showcase design direction and creative style."
+                   data-ar="الأمثلة أعلاه مفاهيم بصرية لعرض أسلوب التصميم والاتجاه الإبداعي."
+                   data-de="Die obigen Beispiele sind visuelle Konzepte zur Präsentation des Designstils und der kreativen Ausrichtung.">
+                    نمونه‌های بالا کانسپت‌های نمایشی هستند و برای نمایش سبک بصری و توانایی طراحی استفاده شده‌اند.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PHILOSOPHY -->
+        <section class="philosophy section">
+
+            <div class="container">
+
+                <div class="philosophy-box reveal">
+
+                    <span class="philosophy-label">MY DESIGN PHILOSOPHY / 005</span>
+
+                    <div class="philosophy-symbol">“</div>
+
+                    <h2 data-fa="طراحی خوب دیده می‌شود؛<br><em>طراحی عالی احساس می‌شود.</em>"
+                        data-en="Good design is seen.<br><em>Great design is felt.</em>"
+                        data-ar="التصميم الجيد يُرى؛<br><em>والتصميم الرائع يُشعر به.</em>"
+                        data-de="Gutes Design sieht man.<br><em>Großartiges Design fühlt man.</em>">
+                        طراحی خوب دیده می‌شود؛<br><em>طراحی عالی احساس می‌شود.</em>
+                    </h2>
+
+                    <div class="philosophy-bottom">
+                        <span>MILAD HEIDARI</span>
+                        <span>CREATIVE MINDSET</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- JOURNEY -->
+        <section class="journey section" id="journey">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <div class="section-kicker">
+                        <span>05</span>
+                        <span data-fa="نگاه من" data-en="MY APPROACH" data-ar="نهجي" data-de="MEIN ANSATZ">نگاه من</span>
+                    </div>
+
+                    <h2 data-fa="هر پروژه یک <em>مسیر جدید.</em>"
+                        data-en="Every project is a <em>new journey.</em>"
+                        data-ar="كل مشروع هو <em>رحلة جديدة.</em>"
+                        data-de="Jedes Projekt ist eine <em>neue Reise.</em>">
+                        هر پروژه یک <em>مسیر جدید.</em>
+                    </h2>
+                </div>
+
+
+                <div class="journey-timeline">
+
+                    <div class="timeline-line"></div><article class="timeline-item reveal">
+                        <span class="timeline-number">01</span>
+                        <div class="timeline-content">
+                            <span class="timeline-label">PHASE ONE</span>
+                            <h3 data-fa="شناخت و کشف" data-en="Discover" data-ar="الاكتشاف" data-de="Entdecken">شناخت و کشف</h3>
+                            <p data-fa="شناخت نیازها، بررسی ایده‌ها و مشخص کردن هدف اصلی پروژه."
+                               data-en="Understanding needs, exploring ideas, and defining the main project goal."
+                               data-ar="فهم الاحتياجات واستكشاف الأفكار وتحديد الهدف الرئيسي للمشروع."
+                               data-de="Bedürfnisse verstehen, Ideen erkunden und das Hauptziel des Projekts definieren.">
+                                شناخت نیازها، بررسی ایده‌ها و مشخص کردن هدف اصلی پروژه.
+                            </p>
+                        </div>
+                    </article>
+
+
+                    <article class="timeline-item reveal">
+                        <span class="timeline-number">02</span>
+                        <div class="timeline-content">
+                            <span class="timeline-label">PHASE TWO</span>
+                            <h3 data-fa="ایده‌پردازی" data-en="Concept" data-ar="التصور" data-de="Konzept">ایده‌پردازی</h3>
+                            <p data-fa="تبدیل ایده‌ها به ساختار بصری، انتخاب سبک و طراحی مسیر تجربه."
+                               data-en="Turning ideas into visual structures, choosing a style, and shaping the experience."
+                               data-ar="تحويل الأفكار إلى بنية مرئية واختيار الأسلوب وتصميم التجربة."
+                               data-de="Ideen in visuelle Strukturen verwandeln, einen Stil wählen und das Erlebnis gestalten.">
+                                تبدیل ایده‌ها به ساختار بصری، انتخاب سبک و طراحی مسیر تجربه.
+                            </p>
+                        </div>
+                    </article>
+
+
+                    <article class="timeline-item reveal">
+                        <span class="timeline-number">03</span>
+                        <div class="timeline-content">
+                            <span class="timeline-label">PHASE THREE</span>
+                            <h3 data-fa="ساخت و اجرا" data-en="Create" data-ar="الإنشاء" data-de="Umsetzen">ساخت و اجرا</h3>
+                            <p data-fa="پیاده‌سازی طرح با تمرکز بر جزئیات، واکنش‌گرایی و عملکرد."
+                               data-en="Building the design with attention to detail, responsiveness, and performance."
+                               data-ar="تنفيذ التصميم مع الاهتمام بالتفاصيل والاستجابة والأداء."
+                               data-de="Das Design mit Fokus auf Details, Responsivität und Leistung umsetzen.">
+                                پیاده‌سازی طرح با تمرکز بر جزئیات، واکنش‌گرایی و عملکرد.
+                            </p>
+                        </div>
+                    </article>
+
+
+                    <article class="timeline-item reveal">
+                        <span class="timeline-number">04</span>
+                        <div class="timeline-content">
+                            <span class="timeline-label">PHASE FOUR</span>
+                            <h3 data-fa="بهبود و تکامل" data-en="Refine" data-ar="التطوير" data-de="Optimieren">بهبود و تکامل</h3>
+                            <p data-fa="بازبینی، اصلاح و آماده‌سازی تجربه نهایی برای استفاده واقعی."
+                               data-en="Reviewing, refining, and preparing the final experience for real-world use."
+                               data-ar="المراجعة والتحسين وتجهيز التجربة النهائية للاستخدام الفعلي."
+                               data-de="Überprüfen, verbessern und das finale Erlebnis für den echten Einsatz vorbereiten.">
+                                بازبینی، اصلاح و آماده‌سازی تجربه نهایی برای استفاده واقعی.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT CTA -->
+        <section class="contact section" id="contact">
+
+            <div class="container">
+
+                <div class="contact-box reveal">
+
+                    <div class="contact-background-symbol">M.</div>
+
+                    <div class="contact-content">
+
+                        <div class="section-kicker">
+                            <span>06</span>
+                            <span data-fa="بیایید شروع کنیم" data-en="LET'S CONNECT" data-ar="لنتواصل" data-de="LASS UNS VERBINDEN">بیایید شروع کنیم</span>
+                        </div>
+
+                        <h2 data-fa="یک ایده داری؟<br><em>بیایید بسازیمش.</em>"
+                            data-en="Have an idea?<br><em>Let's make it real.</em>"
+                            data-ar="لديك فكرة؟<br><em>لنجعلها حقيقة.</em>"
+                            data-de="Du hast eine Idee?<br><em>Lass sie uns verwirklichen.</em>">
+                            یک ایده داری؟<br><em>بیایید بسازیمش.</em>
+                        </h2>
+
+                        <p data-fa="گاهی یک گفت‌وگوی ساده، شروع یک اتفاق بزرگ است."
+                           data-en="Sometimes a simple conversation is the beginning of something extraordinary."
+                           data-ar="أحياناً تكون محادثة بسيطة بداية لشيء استثنائي."
+                           data-de="Manchmal ist ein einfaches Gespräch der Anfang von etwas Außergewöhnlichem.">
+                            گاهی یک گفت‌وگوی ساده، شروع یک اتفاق بزرگ است.
+                        </p>
+
+                        <a href="mailto:miladheidari486@gmail.com" class="button button-primary contact-button">
+                            <span data-fa="شروع یک گفت‌وگو" data-en="START A CONVERSATION" data-ar="ابدأ محادثة" data-de="GESPRÄCH STARTEN">
+                                شروع یک گفت‌وگو
+                            </span>
+                            <span class="button-icon">↗</span>
+                        </a>
+
+                    </div>
+
+                    <div class="contact-decoration">
+                        <div class="contact-ring"></div>
+                        <div class="contact-ring ring-second"></div>
+                        <span>LET'S CREATE</span>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-details">
+
+                    <a href="mailto:miladheidari486@gmail.com" class="contact-detail">
+                        <span class="detail-icon">✉</span>
+                        <div>
+                            <small>EMAIL</small>
+                            <strong>miladheidari486@gmail.com</strong>
+                        </div>
+                        <span class="detail-arrow">↗</span>
+                    </a>
+
+
+                    <a href="https://t.me/Bubby1001" target="_blank" rel="noopener noreferrer" class="contact-detail">
+                        <span class="detail-icon">➤</span>
+                        <div>
+                            <small>TELEGRAM</small>
+                            <strong>@Bubby1001</strong>
+                        </div>
+                        <span class="detail-arrow">↗</span>
+                    </a>
+
+
+                    <a href="tel:09383343167" class="contact-detail">
+                        <span class="detail-icon">⌕</span>
+                        <div>
+                            <small>PHONE</small>
+                            <strong>09383343167</strong>
+                        </div>
+                        <span class="detail-arrow">↗</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-main">
+
+                <a href="#home" class="logo footer-logo">
+                    <span class="logo-mark">M<span>.</span></span>
+                    <span class="logo-text">MILAD<span>HEIDARI</span></span>
+                </a><p data-fa="با فکر طراحی کن. با جسارت خلق کن."
+                   data-en="Think with purpose. Create with courage."
+                   data-ar="فكر بهدف، وابتكر بجرأة."
+                   data-de="Denke mit Absicht. Erschaffe mit Mut.">
+                    با فکر طراحی کن. با جسارت خلق کن.
+                </p>
+
+                <a href="#home" class="back-top" id="backTop">
+                    <span>↑</span>
+                    <small data-fa="بازگشت به بالا" data-en="BACK TO TOP" data-ar="العودة للأعلى" data-de="NACH OBEN">
+                        بازگشت به بالا
+                    </small>
+                </a>
+
+            </div>
+
+
+            <div class="footer-bottom">
+                <span>© <span id="year"></span> MILAD HEIDARI</span>
+                <span data-fa="ساخته شده با خلاقیت و اشتیاق" data-en="MADE WITH CREATIVITY & PASSION" data-ar="صُنع بإبداع وشغف" data-de="MIT KREATIVITÄT & LEIDENSCHAFT">
+                    ساخته شده با خلاقیت و اشتیاق
+                </span>
+                <span>DESIGNED TO BE DIFFERENT.</span>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
